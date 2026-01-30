@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="twitter">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Champions - Twitter Insights Dashboard</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Twitter-specific styles */
+    .champion-card .stats {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .champion-card .stats span {
+      color: var(--text-muted);
+    }
+
+    .champion-card .stats strong {
+      color: var(--primary);
+    }
+
+    .location-list {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .location-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .location-item:last-child {
+      border-bottom: none;
+    }
+
+    .bar {
+      height: 8px;
+      background: var(--primary);
+      border-radius: 4px;
+      margin-top: 0.25rem;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .insight-item {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(249, 115, 22, 0.1) 100%);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .insight-item h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .insight-item .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .insight-item .subtext {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+
+    .word-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .word-cloud span {
+      padding: 0.25rem 0.75rem;
+      background: var(--bg-dark);
+      border-radius: 1rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .word-cloud span:hover {
+      background: var(--primary);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .loading .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>☕ Java Champions</h1>
+      <p>Twitter/X Insights Dashboard</p>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../twitter/index.html" class="nav-link active">Twitter</a>
+        <a href="../github/index.html" class="nav-link">GitHub</a>
+      <a href="../podcasts/index.html" class="nav-link">Podcasts</a>
+      </nav>
+    </header>
+
+    <div id="app">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading data...</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Data fetched via Twitter API v2 • Last updated: <span id="timestamp">-</span></p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

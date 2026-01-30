@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="github">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Champions - GitHub Insights Dashboard</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* GitHub-specific styles */
+    .insights-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .insight-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(35, 134, 54, 0.1) 100%);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+    }
+
+    .insight-card h3 { color: var(--primary); font-size: 0.85rem; margin-bottom: 0.25rem; }
+    .insight-card .value { font-size: 1.25rem; font-weight: 700; }
+    .insight-card .subtext { color: var(--text-muted); font-size: 0.8rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .loading .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--border);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🐙 Java Champions</h1>
+      <p>GitHub Insights Dashboard</p>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-link">Home</a>
+        <a href="../twitter/index.html" class="nav-link">Twitter</a>
+        <a href="../github/index.html" class="nav-link active">GitHub</a>
+      <a href="../podcasts/index.html" class="nav-link">Podcasts</a>
+      </nav>
+    </header>
+
+    <div id="app">
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading data...</p>
+      </div>
+    </div>
+
+    <footer>
+      <p>Data fetched via GitHub API • Last updated: <span id="timestamp">-</span></p>
+    </footer>
+  </div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>

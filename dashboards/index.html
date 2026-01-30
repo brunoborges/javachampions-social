@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Champions - Social Media Insights</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+      border-radius: 1rem;
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      background: linear-gradient(135deg, #f97316 0%, #238636 50%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .dashboard-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .dashboard-card {
+      background: var(--bg-card);
+      border-radius: 1rem;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .dashboard-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      text-decoration: none;
+    }
+
+    .dashboard-card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .dashboard-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .dashboard-card.twitter:hover {
+      --primary: #f97316;
+    }
+
+    .dashboard-card.github:hover {
+      --primary: #238636;
+    }
+
+    .dashboard-card .features {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .dashboard-card .features ul {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .dashboard-card .features li {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dashboard-card .features li::before {
+      content: "✓";
+      color: var(--success);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero">
+      <h1>☕ Java Champions</h1>
+      <p>Explore social media insights and analytics for the Java Champions community</p>
+    </div>
+
+    <div class="dashboard-cards">
+      <a href="twitter/index.html" class="dashboard-card twitter">
+        <div class="icon">𝕏</div>
+        <h2>Twitter / X Dashboard</h2>
+        <p>Analyze Twitter presence, follower counts, and engagement metrics for Java Champions on the X platform.</p>
+        <div class="features">
+          <ul>
+            <li>Follower count leaderboard</li>
+            <li>Follower distribution charts</li>
+            <li>Search and filter champions</li>
+            <li>Profile cards with bios</li>
+          </ul>
+        </div>
+      </a>
+
+      <a href="github/index.html" class="dashboard-card github">
+        <div class="icon">🐙</div>
+        <h2>GitHub Dashboard</h2>
+        <p>Discover GitHub activity, repositories, stars, and contributions from Java Champions developers.</p>
+        <div class="features">
+          <ul>
+            <li>Stars and followers rankings</li>
+            <li>Top programming languages</li>
+            <li>Company affiliations</li>
+            <li>Repository statistics</li>
+          </ul>
+        </div>
+      </a>
+
+      <a href="podcasts/index.html" class="dashboard-card podcasts">
+        <div class="icon">🎙️</div>
+        <h2>Podcast Directory</h2>
+        <p>Explore podcasts hosted by Java Champions covering Java, software development, and tech topics.</p>
+        <div class="features">
+          <ul>
+            <li>Episode counts and feeds</li>
+            <li>Host information</li>
+            <li>Multi-language content</li>
+            <li>Latest episodes</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      <p>
+        Data sourced from the official 
+        <a href="https://github.com/aalmiray/java-champions" target="_blank">Java Champions list</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>

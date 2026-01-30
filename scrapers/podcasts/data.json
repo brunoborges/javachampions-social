@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-01-30T19:58:00.000Z",
+  "count": 7,
+  "results": [
+    {
+      "title": "airhacks.fm podcast",
+      "url": "https://airhacks.fm",
+      "logo": "https://airhacks.fm/images/airhacksfm.jpg",
+      "language": "EN",
+      "hosts": ["Adam Bien"],
+      "social": {},
+      "feedUrl": "https://airhacks.fm/episodes/feed.xml",
+      "episodeCount": 381,
+      "description": "podcast with adam bien",
+      "lastEpisodeDate": null,
+      "latestEpisodeTitle": null
+    },
+    {
+      "title": "The Stackd Podcast",
+      "url": "https://stackdpodcast.com",
+      "logo": "https://pbs.twimg.com/profile_images/1247938130331627522/2KUqWYh__400x400.jpg",
+      "language": "EN",
+      "hosts": ["Kito Mann", "Josh Juneau", "Daniel Hinojosa", "Ian Hlavats"],
+      "social": {"twitter": "https://twitter.com/stackdpodcast", "mastodon": "https://mastodon.social/@stackdpodcast"},
+      "feedUrl": "https://www.pubhouse.net/podcasts/the-stackd-podcast/feed/",
+      "episodeCount": 80,
+      "description": "The Stackd Podcast - Pub House Network",
+      "lastEpisodeDate": null,
+      "latestEpisodeTitle": null
+    },
+    {
+      "title": "Foojay Podcast",
+      "url": "https://foojay.io/today/category/podcast/",
+      "logo": "https://foojay.io/wp-content/uploads/2020/04/cropped-Favicon.png",
+      "language": "EN",
+      "hosts": ["Frank Delporte"],
+      "social": {"twitter": "https://x.com/foojayio", "linkedin": "https://www.linkedin.com/company/foojayio/", "mastodon": "https://foojay.social/@foojay"},
+      "feedUrl": "https://foojay.io/today/category/podcast/feed/",
+      "episodeCount": 10,
+      "description": "foojay is a place for friends of OpenJDK, a one stop shop for all things Java.",
+      "lastEpisodeDate": "2025-12-29T06:02:00.000Z",
+      "latestEpisodeTitle": "Foojay Podcast #88: From Code to Stage: Organizing Conferences and Finding Your Voice as a Speaker"
+    },
+    {
+      "title": "JFX in Action",
+      "url": "https://webtechie.be/tags/jfx-in-action/",
+      "logo": "https://webtechie.be/apple-touch-icon.png",
+      "language": "EN",
+      "hosts": ["Frank Delporte"],
+      "social": {"mastodon": "https://foojay.social/@frankdelporte"},
+      "feedUrl": "https://webtechie.be/tags/jfx-in-action/index.xml",
+      "episodeCount": 24,
+      "description": "JavaFX In Action video series by Frank Delporte",
+      "lastEpisodeDate": "2025-12-04T00:00:00.000Z",
+      "latestEpisodeTitle": "JavaFX In Action #24 with Florian Enner about Robot 3D Visualizations and Charts"
+    },
+    {
+      "title": "Happy Path Programming",
+      "url": "https://happypathprogramming.com/",
+      "logo": "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo400/7757384/7757384-1601046105997-bcb5fe879f7bb.jpg",
+      "language": "EN",
+      "hosts": ["Bruce Eckel", "James Ward"],
+      "social": {"twitter": "https://twitter.com/happypathprog"},
+      "feedUrl": "https://anchor.fm/2ed56aa0/podcast/rss",
+      "episodeCount": 381,
+      "description": "No-frills discussions between Bruce Eckel and James Ward about programming, what it is, and what it should be.",
+      "lastEpisodeDate": null,
+      "latestEpisodeTitle": null
+    },
+    {
+      "title": "Les Cast Codeurs Podcast",
+      "url": "https://lescastcodeurs.com/",
+      "logo": "https://lescastcodeurs.com/images/default-twitter-card.png",
+      "language": "FR",
+      "hosts": ["Antonio Goncalves", "Arnaud Héritier", "Emmanuel Bernard", "Guillaume Laforge", "Katia Aresti"],
+      "social": {"twitter": "https://twitter.com/lescastcodeurs"},
+      "feedUrl": "https://lescastcodeurs.com/feed.atom",
+      "episodeCount": 381,
+      "description": "Les Cast Codeurs est un podcast en français de, par et pour les développeurs. Prenez connaissance des dernières nouvelles de la sphère Java et du développement en général.",
+      "lastEpisodeDate": null,
+      "latestEpisodeTitle": null
+    },
+    {
+      "title": "Devrel Radio",
+      "url": "https://www.youtube.com/@devrelradio",
+      "logo": "https://yt3.googleusercontent.com/o80vIboq1OSfP0HzWSlqk9FjjF0V83Y0s-_IHjj6bZIkUYq3HlzzfKPoQm5awB4pJuSqXGqZs8g=s900-c-k-c0x00ffffff-no-rj",
+      "language": "EN",
+      "hosts": ["Viktor Gamov", "Baruch Sadogursky"],
+      "social": {"twitter": "https://x.com/devrelradio"},
+      "feedUrl": "https://www.youtube.com/feeds/videos.xml?channel_id=UCazQCYpjkotqMKHg1ddj2eQ",
+      "episodeCount": 381,
+      "description": "The podcast where we Tune In to the Heart of Developer Relations!",
+      "lastEpisodeDate": null,
+      "latestEpisodeTitle": null
+    }
+  ]
+}

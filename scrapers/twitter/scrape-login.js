@@ -8,7 +8,7 @@ const CONFIG = {
   userDataDir: path.join(__dirname, '.browser-data'),
   delayBetweenRequests: 4000, // 4 seconds to avoid rate limiting
   timeout: 20000,
-  outputFile: 'twitter-followers.json',
+  outputFile: path.join(__dirname, 'data.json'),
   yamlUrl: 'https://raw.githubusercontent.com/aalmiray/java-champions/refs/heads/main/java-champions.yml',
   batchSize: 10 // How many to process before saving
 };

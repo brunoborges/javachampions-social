@@ -1,0 +1,1977 @@
+    // Format numbers with K/M suffixes
+    function formatNumber(num) {
+      if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+      if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+      return num?.toLocaleString() || '0';
+    }
+
+    // Get default avatar
+    function getAvatar(url) {
+      return url || 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png';
+    }
+
+    // Extract keywords from bios
+    function extractKeywords(champions) {
+      const stopWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'must', 'shall', 'can', 'need', 'dare', 'ought', 'used', 'i', 'me', 'my', 'myself', 'we', 'our', 'you', 'your', 'he', 'him', 'his', 'she', 'her', 'it', 'its', 'they', 'them', 'their', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'as', 'if', 'not', 'no', 'so', 'too', 'very', 'just', 'about', 'also', 'all', 'any', 'some', 'https', 'http', 'com', 'co', 't']);
+      const wordCount = {};
+      
+      champions.forEach(c => {
+        if (!c.bio) return;
+        const words = c.bio.toLowerCase().match(/[a-z]+/g) || [];
+        words.forEach(word => {
+          if (word.length > 2 && !stopWords.has(word)) {
+            wordCount[word] = (wordCount[word] || 0) + 1;
+          }
+        });
+      });
+      
+      return Object.entries(wordCount)
+        .filter(([_, count]) => count >= 3)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 40);
+    }
+
+    // Group by location
+    function groupByLocation(champions) {
+      const locations = {};
+      champions.forEach(c => {
+        if (!c.location) return;
+        const loc = c.location.trim();
+        locations[loc] = (locations[loc] || 0) + 1;
+      });
+      return Object.entries(locations)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15);
+    }
+
+    // Calculate follower distribution buckets
+    function getFollowerDistribution(champions) {
+      const buckets = {
+        '< 1K': 0,
+        '1K - 5K': 0,
+        '5K - 10K': 0,
+        '10K - 25K': 0,
+        '25K - 50K': 0,
+        '50K - 100K': 0,
+        '100K+': 0
+      };
+      
+      champions.forEach(c => {
+        const f = c.followers || 0;
+        if (f < 1000) buckets['< 1K']++;
+        else if (f < 5000) buckets['1K - 5K']++;
+        else if (f < 10000) buckets['5K - 10K']++;
+        else if (f < 25000) buckets['10K - 25K']++;
+        else if (f < 50000) buckets['25K - 50K']++;
+        else if (f < 100000) buckets['50K - 100K']++;
+        else buckets['100K+']++;
+      });
+      
+      return buckets;
+    }
+
+    // Main render function
+    function render(data) {
+      const champions = data.results.filter(r => !r.error);
+      const totalFollowers = champions.reduce((sum, c) => sum + (c.followers || 0), 0);
+      const totalTweets = champions.reduce((sum, c) => sum + (c.tweets_count || 0), 0);
+      const avgFollowers = Math.round(totalFollowers / champions.length);
+      const medianFollowers = champions
+        .map(c => c.followers || 0)
+        .sort((a, b) => a - b)[Math.floor(champions.length / 2)];
+      
+      const topByFollowers = [...champions].sort((a, b) => (b.followers || 0) - (a.followers || 0));
+      const topByTweets = [...champions].sort((a, b) => (b.tweets_count || 0) - (a.tweets_count || 0));
+      const distribution = getFollowerDistribution(champions);
+      const locations = groupByLocation(champions);
+      const keywords = extractKeywords(champions);
+      const maxLocationCount = Math.max(...locations.map(l => l[1]));
+
+      document.getElementById('timestamp').textContent = new Date(data.timestamp).toLocaleString();
+
+      document.getElementById('app').innerHTML = `
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="icon">👥</div>
+            <div class="value">${champions.length}</div>
+            <div class="label">Champions with Twitter</div>
+          </div>
+          <div class="stat-card">
+            <div class="icon">📊</div>
+            <div class="value">${formatNumber(totalFollowers)}</div>
+            <div class="label">Combined Followers</div>
+          </div>
+          <div class="stat-card">
+            <div class="icon">📈</div>
+            <div class="value">${formatNumber(avgFollowers)}</div>
+            <div class="label">Average Followers</div>
+          </div>
+          <div class="stat-card">
+            <div class="icon">📉</div>
+            <div class="value">${formatNumber(medianFollowers)}</div>
+            <div class="label">Median Followers</div>
+          </div>
+          <div class="stat-card">
+            <div class="icon">💬</div>
+            <div class="value">${formatNumber(totalTweets)}</div>
+            <div class="label">Total Tweets</div>
+          </div>
+        </div>
+
+        <!-- Insights Row -->
+        <div class="insights-grid">
+          <div class="insight-item">
+            <h3>🏆 Most Followed</h3>
+            <div class="value">@${topByFollowers[0]?.handle}</div>
+            <div class="subtext">${formatNumber(topByFollowers[0]?.followers)} followers</div>
+          </div>
+          <div class="insight-item">
+            <h3>📢 Most Active</h3>
+            <div class="value">@${topByTweets[0]?.handle}</div>
+            <div class="subtext">${formatNumber(topByTweets[0]?.tweets_count)} tweets</div>
+          </div>
+          <div class="insight-item">
+            <h3>⚡ Engagement Power</h3>
+            <div class="value">${formatNumber(totalFollowers / champions.length * champions.length)}</div>
+            <div class="subtext">Combined reach potential</div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid-2">
+          <div class="card">
+            <h2>🏅 Top 25 by Followers</h2>
+            <div class="leaderboard">
+              ${topByFollowers.slice(0, 25).map((c, i) => `
+                <div class="leaderboard-item" onclick="window.open('https://x.com/${c.handle}', '_blank')">
+                  <div class="rank">${i + 1}</div>
+                  <img class="avatar" src="${getAvatar(c.profile_image)}" alt="${c.name}" onerror="this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png'">
+                  <div class="info">
+                    <div class="name">${c.display_name || c.name}</div>
+                    <div class="handle">@${c.handle}</div>
+                  </div>
+                  <div class="followers">
+                    ${formatNumber(c.followers)}
+                    <small>followers</small>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="card">
+            <h2>📊 Follower Distribution</h2>
+            <div class="chart-container">
+              <canvas id="distributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h2>📍 Top Locations</h2>
+            <div class="location-list">
+              ${locations.map(([loc, count]) => `
+                <div class="location-item">
+                  <span>${loc}</span>
+                  <strong>${count}</strong>
+                </div>
+                <div class="bar" style="width: ${(count / maxLocationCount) * 100}%"></div>
+              `).join('')}
+            </div>
+          </div>
+          
+          <div class="card">
+            <h2>💭 Bio Keywords</h2>
+            <div class="word-cloud">
+              ${keywords.map(([word, count]) => {
+                const size = 0.7 + (count / keywords[0][1]) * 0.8;
+                return `<span style="font-size: ${size}rem">${word}</span>`;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+
+        <!-- All Champions -->
+        <div class="card" style="margin-bottom: 2rem;">
+          <h2>🌟 All Java Champions</h2>
+          <input type="text" class="search-box" id="searchBox" placeholder="🔍 Search by name, handle, or bio...">
+          <div class="champions-grid" id="championsGrid">
+            ${topByFollowers.map(c => `
+              <div class="champion-card" data-search="${(c.name + ' ' + c.handle + ' ' + (c.bio || '')).toLowerCase()}" onclick="window.open('https://x.com/${c.handle}', '_blank')">
+                <img class="avatar" src="${getAvatar(c.profile_image)}" alt="${c.name}" onerror="this.src='https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png'">
+                <div class="details">
+                  <div class="name">${c.display_name || c.name}</div>
+                  <div class="handle">@${c.handle}</div>
+                  <div class="bio">${c.bio || ''}</div>
+                  <div class="stats">
+                    <span><strong>${formatNumber(c.followers)}</strong> followers</span>
+                    <span><strong>${formatNumber(c.tweets_count)}</strong> tweets</span>
+                  </div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      // Render distribution chart
+      const ctx = document.getElementById('distributionChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(distribution),
+          datasets: [{
+            label: 'Champions',
+            data: Object.values(distribution),
+            backgroundColor: [
+              'rgba(249, 115, 22, 0.6)',
+              'rgba(249, 115, 22, 0.7)',
+              'rgba(249, 115, 22, 0.8)',
+              'rgba(249, 115, 22, 0.85)',
+              'rgba(249, 115, 22, 0.9)',
+              'rgba(249, 115, 22, 0.95)',
+              'rgba(249, 115, 22, 1)'
+            ],
+            borderColor: 'rgba(249, 115, 22, 1)',
+            borderWidth: 1,
+            borderRadius: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: 'rgba(255,255,255,0.1)' },
+              ticks: { color: '#94a3b8' }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: '#94a3b8' }
+            }
+          }
+        }
+      });
+
+      // Search functionality
+      document.getElementById('searchBox').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        document.querySelectorAll('.champion-card').forEach(card => {
+          const matches = card.dataset.search.includes(query);
+          card.style.display = matches ? '' : 'none';
+        });
+      });
+    }
+
+    // Load data - try fetch first, fallback to embedded
+    const embeddedData = {
+  "timestamp": "2026-01-30T15:05:37.345Z",
+  "total": 100,
+  "successful": 100,
+  "failed": 0,
+  "results": [
+    {
+      "handle": "mcannonbrookes",
+      "name": "Mike Cannon-Brookes",
+      "twitter_id": "11781162",
+      "display_name": "Mike Cannon-Brookes 👨🏼‍💻🧢🇦🇺",
+      "bio": "Dad. Australian 💛💚 Busy @Atlassian @UtahJazz @SSFCRabbitohs @Grok_Ventures @Boundless_Earth @BlackbirdVC @SunCable1 @RoomToRead and 🌱CO2 age: 338.96",
+      "location": "Gundungara Country",
+      "profile_image": "https://pbs.twimg.com/profile_images/568401563538841600/2eTVtXXO.jpeg",
+      "verified": false,
+      "created_at": "2008-01-03T01:42:16.000Z",
+      "followers": 104265,
+      "following": 789,
+      "tweets_count": 17743,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "joshbloch",
+      "name": "Dr. Joshua Bloch",
+      "twitter_id": "61135090",
+      "display_name": "Joshua Bloch",
+      "bio": "Effective Java author, API Designer, CMU Prof, Swell guy, No longer posting here. Find me at https://t.co/bNAfciJvWM",
+      "location": "Silicon Valley",
+      "url": "https://t.co/I3ePqno6HS",
+      "profile_image": "https://pbs.twimg.com/profile_images/557261821850046465/Du8e1WXi.jpeg",
+      "verified": false,
+      "created_at": "2009-07-29T06:50:55.000Z",
+      "followers": 65625,
+      "following": 198,
+      "tweets_count": 16974,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "mariofusco",
+      "name": "Mario Fusco",
+      "twitter_id": "142589904",
+      "display_name": "Mario Fusco",
+      "bio": "Java Champion ~ Open source advocate ~ Frequent speaker ~ @jugmilano coordinator ~ @QuarkusIO and @langchain4j committer at @IBM ~ Pragmatic dreamer ~ Europeist",
+      "location": "Milan, Italy",
+      "url": "https://t.co/7UduqUkx0b",
+      "profile_image": "https://pbs.twimg.com/profile_images/1844675892687073296/o1EAUKsd.jpg",
+      "verified": false,
+      "created_at": "2010-05-11T07:34:02.000Z",
+      "followers": 49203,
+      "following": 331,
+      "tweets_count": 20930,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "AdamBien",
+      "name": "Adam Bien",
+      "twitter_id": "20802091",
+      "display_name": "Adam Bien",
+      "bio": "Author, JavaONE Rockstar, Consultant, Java Champion, AWS Hero\nhttps://t.co/gniBTK2Xdp\ntrainer: https://t.co/NtetbYkf62\npodcaster: https://t.co/UZU8MvIS17",
+      "location": "Germany",
+      "url": "https://t.co/LVAg660Zpk",
+      "profile_image": "https://pbs.twimg.com/profile_images/82608077/abien_icon.jpg",
+      "verified": false,
+      "created_at": "2009-02-13T20:14:34.000Z",
+      "followers": 36100,
+      "following": 177,
+      "tweets_count": 15543,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "brunoborges",
+      "name": "Bruno Borges",
+      "twitter_id": "14566379",
+      "display_name": "Bruno Borges",
+      "bio": "Brazilian Immigrant 🇨🇦🇧🇷🇺🇸 Java Champion. Principal Product Manager for #Java ☕️ Microsoft.  Previously @OracleDevs, #Azure DevRel. Leads @JavaAtMicrosoft",
+      "location": "Vancouver, British Columbia",
+      "url": "https://t.co/ALsyNUWhIB",
+      "profile_image": "https://pbs.twimg.com/profile_images/1688732968003555328/J-eBKGmX.jpg",
+      "verified": false,
+      "created_at": "2008-04-28T06:54:07.000Z",
+      "followers": 35662,
+      "following": 1017,
+      "tweets_count": 78852,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "myfear",
+      "name": "Markus Eisele",
+      "twitter_id": "14206328",
+      "display_name": "Markus Eisele",
+      "bio": "Something at @IBMResearch. Legal thinks you need to know that I'm speaking for myself here. I believe you knew.",
+      "location": "Germany",
+      "url": "https://t.co/vmNFeMS2iT",
+      "profile_image": "https://pbs.twimg.com/profile_images/2004219520760623104/kj9IG9Tk.jpg",
+      "verified": false,
+      "created_at": "2008-03-24T08:57:46.000Z",
+      "followers": 29040,
+      "following": 1696,
+      "tweets_count": 67188,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "dalmaer",
+      "name": "Dion Almaer",
+      "twitter_id": "4216361",
+      "display_name": "Dion Almaer",
+      "bio": "Bringing nuance to a knife fight, surprisingly older than @bgalbs. AI Dev @ Google Labs. Prev: Google, Shopify, Ajaxian & more. 🌥: @almaer.com 🧵: dionalmaer",
+      "location": "🌎🕸",
+      "url": "https://t.co/DCA3uSA2YI",
+      "profile_image": "https://pbs.twimg.com/profile_images/3380865881/f73b3687ff39b795db05fcaf35972270.jpeg",
+      "verified": false,
+      "created_at": "2007-04-11T17:46:18.000Z",
+      "followers": 27192,
+      "following": 6067,
+      "tweets_count": 42998,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "relizarov",
+      "name": "Roman Elizarov",
+      "twitter_id": "193907953",
+      "display_name": "Roman Elizarov",
+      "bio": "Software infrastructure & libs, language design, sports programming/ICPC, concurrency & algorithms, math & quantitative finance. ex-project lead for @Kotlin",
+      "profile_image": "https://pbs.twimg.com/profile_images/872365632376983552/G4NXJ0DY.jpg",
+      "verified": false,
+      "created_at": "2010-09-22T23:26:56.000Z",
+      "followers": 19481,
+      "following": 915,
+      "tweets_count": 4319,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "danielbryantuk",
+      "name": "Dr. Daniel Bryant",
+      "twitter_id": "37418699",
+      "display_name": "Daniel Bryant",
+      "bio": "Building platforms @Syntasso | News/Podcast @InfoQ | Web 2.0 coder, platform engineer, Java Champion, CS PhD | cloud/K8s, APIs, IPAs, running | learner/teacher",
+      "location": "London, UK",
+      "url": "https://t.co/4G51n2m4VC",
+      "profile_image": "https://pbs.twimg.com/profile_images/1246138897802964992/QQOmlOOo.jpg",
+      "verified": false,
+      "created_at": "2009-05-03T13:44:28.000Z",
+      "followers": 14913,
+      "following": 2538,
+      "tweets_count": 31928,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "steveonjava",
+      "name": "Stephen Chin",
+      "twitter_id": "16739757",
+      "display_name": "Stephen Chin",
+      "bio": "Author, speaker, open-source hacker by night. VP of developer relations at @Neo4j by day.",
+      "location": "37.521115,-122.296056",
+      "url": "https://t.co/VR1ur60TbM",
+      "profile_image": "https://pbs.twimg.com/profile_images/1840358502780272640/_Q37dqJ3.jpg",
+      "verified": false,
+      "created_at": "2008-10-14T15:35:47.000Z",
+      "followers": 12993,
+      "following": 1631,
+      "tweets_count": 3330,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "juliendubois",
+      "name": "Julien Dubois",
+      "twitter_id": "24742031",
+      "display_name": "Julien Dubois",
+      "bio": "Principal Manager, Java Developer Relations @Microsoft - Lead developer of @jhipster",
+      "location": "Suresnes, France",
+      "url": "https://t.co/ZhHzQU8x1B",
+      "profile_image": "https://pbs.twimg.com/profile_images/1935709504592633857/GkiO8p1e.jpg",
+      "verified": false,
+      "created_at": "2009-03-16T18:30:50.000Z",
+      "followers": 12164,
+      "following": 782,
+      "tweets_count": 16302,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "sebi2706",
+      "name": "Sébastien Blanc",
+      "twitter_id": "16310783",
+      "display_name": "Sébastien Blanc 🇪🇺 🥑",
+      "bio": "Experienced Developer Relations Engineer, husband, speaker, Dad, Open Source, Platform Engineering, Java Champion, 5️⃣😺",
+      "location": "Vallauris, France",
+      "profile_image": "https://pbs.twimg.com/profile_images/2001552465083224064/4Boa_2WI.jpg",
+      "verified": false,
+      "created_at": "2008-09-16T14:03:17.000Z",
+      "followers": 11080,
+      "following": 3049,
+      "tweets_count": 34641,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "antonarhipov",
+      "name": "Anton Arhipov",
+      "twitter_id": "94757717",
+      "display_name": "Anton Arhipov",
+      "bio": "Developer Advocate @ JetBrains\n\n#java #kotlin #intellij #ai #junie #creativecoding #bass #synth & #kettlebells https://t.co/md7MY4DoQ3",
+      "location": "Tallinn",
+      "url": "https://t.co/L4EaiCtUWk",
+      "profile_image": "https://pbs.twimg.com/profile_images/1970986607063842816/_KOgB578.jpg",
+      "verified": false,
+      "created_at": "2009-12-05T08:53:24.000Z",
+      "followers": 10990,
+      "following": 1212,
+      "tweets_count": 5443,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "aalmiray",
+      "name": "Andres Almiray",
+      "twitter_id": "12173192",
+      "display_name": "Andres Almiray",
+      "bio": "I code for fun and help others in the process. Java Champion Alumni. Co-founder of Hackergarten & Hack.Commit.Push. Creator of @jreleaser 🚀",
+      "location": "Basel, Switzerland",
+      "url": "https://t.co/TofXjmWa0Q",
+      "profile_image": "https://pbs.twimg.com/profile_images/1064809172787695616/YflZKhcs.jpg",
+      "verified": false,
+      "created_at": "2008-01-13T04:41:57.000Z",
+      "followers": 10633,
+      "following": 371,
+      "tweets_count": 52889,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "jodastephen",
+      "name": "Stephen Colebourne",
+      "twitter_id": "26755459",
+      "display_name": "Stephen Colebourne",
+      "bio": "Java Champion. Occasional blogger and speaker. Best known for Joda projects and JSR-310. All opinions are mine - I do not represent my employer.",
+      "location": "London, UK",
+      "url": "https://t.co/x24wP293Hg",
+      "profile_image": "https://pbs.twimg.com/profile_images/110715822/stephen_colebourne.jpg",
+      "verified": false,
+      "created_at": "2009-03-26T14:04:29.000Z",
+      "followers": 10403,
+      "following": 28,
+      "tweets_count": 2896,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "BruceEckel",
+      "name": "Bruce Eckel",
+      "twitter_id": "258418980",
+      "display_name": "Bruce Eckel",
+      "bio": "Author of Thinking in Java, Thinking in C++, Atomic Kotlin, On Java 8, Atomic Scala and others. Co-podcaster of https://t.co/54wcN0PlDE",
+      "location": "Crested Butte, Colorado",
+      "url": "https://t.co/47d3Q4sRHf",
+      "profile_image": "https://pbs.twimg.com/profile_images/1256829460/image.jpg",
+      "verified": false,
+      "created_at": "2011-02-27T17:50:40.000Z",
+      "followers": 9482,
+      "following": 112,
+      "tweets_count": 931,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "emmanuelbernard",
+      "name": "Emmanuel Bernard",
+      "twitter_id": "14431692",
+      "display_name": "Emmanuel Bernard",
+      "bio": "Open Source software engineer: Hibernate team, Quarkus co-founder and more. Cloud Services @ Red Hat. @lescastcodeurs founder. Java Champion...",
+      "location": "Paris, France",
+      "url": "https://t.co/Ec9HrSmkLJ",
+      "profile_image": "https://pbs.twimg.com/profile_images/1110868233488420865/kgwE0i1K.png",
+      "verified": false,
+      "created_at": "2008-04-18T10:18:42.000Z",
+      "followers": 8854,
+      "following": 329,
+      "tweets_count": 11696,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "cagataycivici",
+      "name": "Cagatay Civici",
+      "twitter_id": "264752166",
+      "display_name": "Cagatay Civici",
+      "bio": "Founder of PrimeFaces, PrimeNG, PrimeReact and PrimeVue. Java Champion.",
+      "url": "https://t.co/0cjHKbxTdz",
+      "profile_image": "https://pbs.twimg.com/profile_images/1978121657215545344/cWn2d_gC.jpg",
+      "verified": false,
+      "created_at": "2011-03-12T11:57:11.000Z",
+      "followers": 8560,
+      "following": 365,
+      "tweets_count": 14475,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "dblevins",
+      "name": "David Blevins",
+      "twitter_id": "34355123",
+      "display_name": "David Blevins",
+      "bio": "A founder of the Apache TomEE, OpenEJB, Geronimo and MicroProfile projects. Member of Apache, EE4J PMC, Jakarta EE WG, MicroProfile WG. CEO @Tomitribe",
+      "location": "Santa Monica, CA",
+      "url": "https://t.co/4DpCgnYNkk",
+      "profile_image": "https://pbs.twimg.com/profile_images/1893103072743735296/NepoBNlF.jpg",
+      "verified": false,
+      "created_at": "2009-04-22T18:37:35.000Z",
+      "followers": 8223,
+      "following": 1021,
+      "tweets_count": 7675,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "bsideup",
+      "name": "Sergei Egorov",
+      "twitter_id": "276958669",
+      "display_name": "Sergei Egorov",
+      "bio": "Cloud builder. Java Champion. Prev: @testcontainers co-creator, CEO/co-founder at @AtomicJarInc (acqd by @docker), StaffEng at @Pivotal/@vmware, @zeroturnaround",
+      "location": "Boulder, CO",
+      "url": "https://t.co/wJUiAm5Nzs",
+      "profile_image": "https://pbs.twimg.com/profile_images/1738758839921455104/yjAqZRiM.jpg",
+      "verified": false,
+      "created_at": "2011-04-04T12:33:20.000Z",
+      "followers": 8131,
+      "following": 1773,
+      "tweets_count": 23276,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "DaschnerS",
+      "name": "Sebastian Daschner",
+      "twitter_id": "2365422276",
+      "display_name": "Sebastian Daschner",
+      "bio": "Helping developers solving the challenges of enterprise software. \n\nJava Champion, consultant, trainer, book author, creator of @DayCaptainApp",
+      "url": "https://t.co/qbYNnxXNp3",
+      "profile_image": "https://pbs.twimg.com/profile_images/815592118135783424/aCs-4BY7.jpg",
+      "verified": false,
+      "created_at": "2014-02-28T10:46:03.000Z",
+      "followers": 7828,
+      "following": 281,
+      "tweets_count": 4798,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "gAmUssA",
+      "name": "Viktor Gamov",
+      "twitter_id": "24692013",
+      "display_name": "Viktor Gamov 🌟",
+      "bio": "🥑 @confluentinc, ☕️Java Champion, Co-author @kafkainaction @EnterpriseWebBk ex @thekonginc Stupidity is my own. Retweet !== endorsement",
+      "location": "☁️",
+      "url": "https://t.co/9AJlGArKs8",
+      "profile_image": "https://pbs.twimg.com/profile_images/1932435741310586880/W8IhWvUO.jpg",
+      "verified": false,
+      "created_at": "2009-03-16T13:43:01.000Z",
+      "followers": 7777,
+      "following": 1915,
+      "tweets_count": 30661,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "pbakker",
+      "name": "Paul Bakker",
+      "twitter_id": "22472919",
+      "display_name": "Paul Bakker",
+      "bio": "Staff Engineer at Netflix in Java Platform - Java Champion - Co-author of \"Java 9 Modularity\" - https://t.co/snQ4t62Npb",
+      "location": "Los Gatos, CA",
+      "url": "https://t.co/H8b8KEWuye",
+      "profile_image": "https://pbs.twimg.com/profile_images/817725181292675074/VNi9vXkx.jpg",
+      "verified": false,
+      "created_at": "2009-03-02T10:36:24.000Z",
+      "followers": 7530,
+      "following": 382,
+      "tweets_count": 4516,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "laytoun",
+      "name": "Mohammed Aboullaite",
+      "twitter_id": "335464378",
+      "display_name": "Mohammed Aboullaite",
+      "bio": "Backend @Spotify. Inconsistent posts!",
+      "location": "Stockholm, Sweden",
+      "url": "https://t.co/IPxeJEqjlS",
+      "profile_image": "https://pbs.twimg.com/profile_images/1715428092783497216/qLsSeKMU.jpg",
+      "verified": false,
+      "created_at": "2011-07-14T18:36:39.000Z",
+      "followers": 7411,
+      "following": 659,
+      "tweets_count": 12187,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "omniprof",
+      "name": "Prof. Ken Fogel",
+      "twitter_id": "29476424",
+      "display_name": "Ken Fogel",
+      "bio": "Get off X, now. Stop supporting the neo-Nazi and white supremicist Elon Musk along with his buddy Trump.",
+      "profile_image": "https://pbs.twimg.com/profile_images/1181905040736436224/1ypGgL71.jpg",
+      "verified": false,
+      "created_at": "2009-04-07T15:59:14.000Z",
+      "followers": 7055,
+      "following": 1715,
+      "tweets_count": 12824,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "dgageot",
+      "name": "David Gageot",
+      "twitter_id": "9706692",
+      "display_name": "David Gageot",
+      "bio": "Chaotic French Speaker. Software Engineer at Docker.\nSee you here: https://t.co/48vbzjXENR",
+      "location": "Paris",
+      "url": "https://t.co/K9D6aYjLw3",
+      "profile_image": "https://pbs.twimg.com/profile_images/1253031877532880906/9Ix8j4ic.jpg",
+      "verified": false,
+      "created_at": "2007-10-26T10:46:03.000Z",
+      "followers": 6838,
+      "following": 23,
+      "tweets_count": 9789,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "mojavelinux",
+      "name": "Dan Allen",
+      "twitter_id": "14640100",
+      "display_name": "Dan Allen 🇺🇦 ☮️",
+      "bio": "OSS Developer, Community Catalyst, @Asciidoctor & @AntoraProject Co-Lead, Java Champion, Author, Cornell Alum.\n#FridaysForFuture #BlackLivesMatter\nhe/him",
+      "location": "Denver, CO, USA",
+      "url": "https://t.co/JUAMesihpT",
+      "profile_image": "https://pbs.twimg.com/profile_images/1176696426895675399/lMcDKZ6Q.jpg",
+      "verified": false,
+      "created_at": "2008-05-03T18:09:13.000Z",
+      "followers": 6785,
+      "following": 776,
+      "tweets_count": 45311,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "holly_cummins",
+      "name": "Dr. Holly Cummins",
+      "twitter_id": "154083210",
+      "display_name": "Holly Cummins (holly_cummins@hachyderm.io)",
+      "bio": "@RedHat - Senior Principal Software Engineer, working on @QuarkusIO. Ex-IBM. Java Champion, developer, author, #cloud surfer and maker. My views are my own.",
+      "location": "London, United Kingdom",
+      "url": "https://t.co/GuGBHUqhII",
+      "profile_image": "https://pbs.twimg.com/profile_images/1610281061568724994/K6WC_AKF.jpg",
+      "verified": false,
+      "created_at": "2010-06-10T09:38:55.000Z",
+      "followers": 6513,
+      "following": 823,
+      "tweets_count": 6637,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "mon_beck",
+      "name": "Monica Beckwith",
+      "twitter_id": "900146322",
+      "display_name": "Monica Beckwith",
+      "bio": "@Java_Champions. Java VM/GC Performance @Microsoft. Interested in co-teaching @TEALSProgram, @FirstLegoLeague. Enjoys country living.",
+      "location": "Austin, TX",
+      "profile_image": "https://pbs.twimg.com/profile_images/1585423506807873537/AUigODtT.jpg",
+      "verified": false,
+      "created_at": "2012-10-23T16:13:07.000Z",
+      "followers": 5833,
+      "following": 1054,
+      "tweets_count": 1492,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "edburns",
+      "name": "Ed Burns",
+      "twitter_id": "14063742",
+      "display_name": "edburns (@edburns@mastodon.social)",
+      "bio": "Beneficiary of white privilege, Ed Burns is a software stylist, speaker, and author, currently working in the server side Java space. (he/him)",
+      "location": "Altamonte Springs U.S.A.",
+      "url": "https://t.co/aW7pV5xoKw",
+      "profile_image": "https://pbs.twimg.com/profile_images/1392895296850513929/9Swqb46V.jpg",
+      "verified": false,
+      "created_at": "2008-03-01T05:09:12.000Z",
+      "followers": 5516,
+      "following": 844,
+      "tweets_count": 7565,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "jeanneboyarsky",
+      "name": "Jeanne Boyarsky",
+      "twitter_id": "55440347",
+      "display_name": "Jeanne Boyarsky",
+      "bio": "Software developer in NYC, Java Champion, FIRST FRC mentor, CodeRanch moderator, Toastmaster. Author of OCP Java Certification Study Guides and Real World Java",
+      "location": "New York City",
+      "url": "https://t.co/N8djc9UT2z",
+      "profile_image": "https://pbs.twimg.com/profile_images/1092253282502873088/tD3_iBed.jpg",
+      "verified": false,
+      "created_at": "2009-07-10T02:18:05.000Z",
+      "followers": 5316,
+      "following": 201,
+      "tweets_count": 7712,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "noctarius2k",
+      "name": "Christoph Engelbert",
+      "twitter_id": "1063580948",
+      "display_name": "Christoph Engelbert / Noctarius ツ / エンゲルベルト クリス",
+      "bio": "#Devrel @simplyblock_io, #Opensource, @Java_Champions, Ex Timescale, Instana, Ubisoft, Hazelcast - Views are my own\n\nLinktree: https://t.co/L0qZ9KuYRC",
+      "location": "Haan, Germany",
+      "profile_image": "https://pbs.twimg.com/profile_images/1140593360048181248/EPkjnXIV.png",
+      "verified": false,
+      "created_at": "2013-01-05T17:50:29.000Z",
+      "followers": 5294,
+      "following": 2525,
+      "tweets_count": 49406,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "bercut2000",
+      "name": "Dmitry Aleksandrov",
+      "twitter_id": "361985635",
+      "display_name": "Dmitry Alexandrov ✈️",
+      "bio": "Enjoying Sabbatical \nex-Oracle,ex-DT, ex-VMware, ex-CSC.\nSpeaker, Author, Blogger.\n@bgjug & @jPrimeConf co-org.\nOne of the @Java_Champions and @groundbreakers.",
+      "location": "SOF / LED",
+      "url": "https://t.co/5Yvcw0oGiY",
+      "profile_image": "https://pbs.twimg.com/profile_images/1704438557132132352/6QA0bdz4.jpg",
+      "verified": false,
+      "created_at": "2011-08-25T17:20:27.000Z",
+      "followers": 5242,
+      "following": 333,
+      "tweets_count": 9485,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "MaritvanDijk77",
+      "name": "Marit van Dijk",
+      "twitter_id": "2351468094",
+      "display_name": "Marit van Dijk ☕️🥑",
+      "bio": "Software Developer | Java Champion | Java Developer Advocate @ JetBrains | International Keynote Speaker | Pronouns: She/her",
+      "location": "Amstelveen, Nederland",
+      "url": "https://t.co/y7UDIStkVR",
+      "profile_image": "https://pbs.twimg.com/profile_images/2001674316857929728/Cumkyg_e.jpg",
+      "verified": false,
+      "created_at": "2014-02-19T10:21:37.000Z",
+      "followers": 5105,
+      "following": 2771,
+      "tweets_count": 31180,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "cliff_click",
+      "name": "Dr. Cliff Click",
+      "twitter_id": "4215027858",
+      "display_name": "Cliff Click",
+      "bio": "Creator of the HotSpot JIT, writing compilers since age 15, low-latency GC, Big Data, ML & AI, concurrent and distributed algos, PhD, 20+ patents, father of 4",
+      "location": "Los Gatos, CA",
+      "url": "https://t.co/DzK0QIo5P0",
+      "profile_image": "https://pbs.twimg.com/profile_images/1026859052934942720/TNucm9Nq.jpg",
+      "verified": false,
+      "created_at": "2015-11-12T18:28:38.000Z",
+      "followers": 4637,
+      "following": 0,
+      "tweets_count": 1172,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "yfain",
+      "name": "Yakov Fain",
+      "twitter_id": "6891682",
+      "display_name": "Yakov Fain",
+      "bio": "My Instagram: https://t.co/IHr1rKldPd\nМой youtube канал о текущих событиях: https://t.co/2ktrWWpRCx\nMy blog:  https://t.co/3ZR5SOfk8s.",
+      "location": "NYC/Miami",
+      "url": "https://t.co/3ZR5SOfk8s",
+      "profile_image": "https://pbs.twimg.com/profile_images/768526688728801281/dvEfGYwn.jpg",
+      "verified": false,
+      "created_at": "2007-06-18T13:40:31.000Z",
+      "followers": 4608,
+      "following": 35,
+      "tweets_count": 8002,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "ionutbalosin",
+      "name": "Ionut Balosin",
+      "twitter_id": "2984244575",
+      "display_name": "Ionut Balosin",
+      "bio": "👨‍💻 Principal IT Architect • 🎓 Technical Trainer • 🏆 Java Champion • ♠️ Oracle ACE Associate • 🔑 Security Champion • 🎤 Speaker • ✍️ Blogger",
+      "location": "Vienna, Austria",
+      "url": "https://t.co/ohyIUOrb3z",
+      "profile_image": "https://pbs.twimg.com/profile_images/1507618389531021320/9CI2hCPo.jpg",
+      "verified": false,
+      "created_at": "2015-01-18T16:05:31.000Z",
+      "followers": 4540,
+      "following": 168,
+      "tweets_count": 2523,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "karesti",
+      "name": "Katia Aresti",
+      "twitter_id": "134497728",
+      "display_name": "Katia Aresti",
+      "bio": "Dev @Infinispan @QuarkusIO\nOrg @devoxxfr \n@Java_Champions 2019\nPodcaster @lescastcodeurs  2023\nImproviser https://t.co/mV6yyFS9Vd",
+      "location": "Paris - Bilbao - Zamora ",
+      "url": "https://t.co/bvffNbyf9N",
+      "profile_image": "https://pbs.twimg.com/profile_images/1413050292007055362/-w4wxYZg.jpg",
+      "verified": false,
+      "created_at": "2010-04-18T15:54:46.000Z",
+      "followers": 4353,
+      "following": 760,
+      "tweets_count": 5748,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "agnes_crepet",
+      "name": "Agnes Crepet",
+      "twitter_id": "181088912",
+      "display_name": "Agnès Crepet",
+      "bio": "(S)low Tech Activist - Head of Software Longevity&IT @Fairphone - Co-Founder @NinjaSquad @MiXiTConf - Board member @MoutonNumerique - Member of @duchessfr",
+      "location": "Saint-Etienne, France",
+      "url": "https://t.co/mtL1Silu7C",
+      "profile_image": "https://pbs.twimg.com/profile_images/1397615624696877056/B04op_8f.jpg",
+      "verified": false,
+      "created_at": "2010-08-21T07:02:49.000Z",
+      "followers": 4342,
+      "following": 337,
+      "tweets_count": 8558,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "gafter",
+      "name": "Dr. Neal Gafter",
+      "twitter_id": "14529770",
+      "display_name": "Neal Gafter",
+      "bio": "Interested in programming language evolution (C++, C#, Java, Kotlin), and Bitcoin.",
+      "location": "Bellevue, WA",
+      "url": "https://t.co/KNTUJ1Oi9Q",
+      "profile_image": "https://pbs.twimg.com/profile_images/58841129/gafter-google.jpg",
+      "verified": false,
+      "created_at": "2008-04-25T17:16:01.000Z",
+      "followers": 4182,
+      "following": 397,
+      "tweets_count": 489,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "javapapo",
+      "name": "Paris Apostolopoulos",
+      "twitter_id": "1737011",
+      "display_name": "Paris Apostolopoulos",
+      "bio": "find me on Bluesky",
+      "profile_image": "https://pbs.twimg.com/profile_images/1917603112447033344/dnoyWe4B.jpg",
+      "verified": false,
+      "created_at": "2007-03-21T11:57:08.000Z",
+      "followers": 4098,
+      "following": 2719,
+      "tweets_count": 35499,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "deitel",
+      "name": "Paul J. Deitel",
+      "twitter_id": "24867870",
+      "display_name": "Deitel",
+      "bio": "The Deitels are best-selling authors of programming-languages books & videos. We also provide instructor-led programming training to organizations worldwide.",
+      "location": "Sudbury, MA",
+      "url": "http://t.co/ug9TDBvscz",
+      "profile_image": "https://pbs.twimg.com/profile_images/1034438734760923136/NL_CRu-_.jpg",
+      "verified": false,
+      "created_at": "2009-03-17T11:18:41.000Z",
+      "followers": 4009,
+      "following": 77,
+      "tweets_count": 2253,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "radcortez",
+      "name": "Roberto Cortez",
+      "twitter_id": "867125797",
+      "display_name": "Roberto Cortez",
+      "bio": "Passionate Developer, Blogger, Youtuber, Speaker, JUG Leader, Java Champion @Redhat @QuarkusIO",
+      "location": "Coimbra",
+      "url": "https://t.co/kX4XxkiAHg",
+      "profile_image": "https://pbs.twimg.com/profile_images/1544654119335510016/uShnDD6P.jpg",
+      "verified": false,
+      "created_at": "2012-10-07T23:34:48.000Z",
+      "followers": 3987,
+      "following": 434,
+      "tweets_count": 7048,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "clementplop",
+      "name": "Dr. Clement Escoffier",
+      "twitter_id": "33496289",
+      "display_name": "Clement Escoffier",
+      "bio": "Doing reactive stuff. Distinguished Engineer @Redhat. Java Champion. #quarkus #vertx #smallrye. Rabbit shepherd. Opinions are mine not of my employer.",
+      "location": "Somewhere over the rainbow",
+      "url": "https://t.co/agc2YeVCBO",
+      "profile_image": "https://pbs.twimg.com/profile_images/1059135799147540480/AXaLqunC.jpg",
+      "verified": false,
+      "created_at": "2009-04-20T12:29:54.000Z",
+      "followers": 3696,
+      "following": 644,
+      "tweets_count": 6985,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "23derevo",
+      "name": "Dr. Alexey Fyodorov",
+      "twitter_id": "130087207",
+      "display_name": "Alexey Fyodorov",
+      "bio": "Conference Director @ JUG Ru Group, Java Champion, AV Lead @ ICPC. Engineering is an art of managing trade-offs. He/him.",
+      "location": "Russia",
+      "url": "https://t.co/wNcuSAsTHG",
+      "profile_image": "https://pbs.twimg.com/profile_images/1778098527370932226/Vuq6dWe0.jpg",
+      "verified": false,
+      "created_at": "2010-04-06T07:57:40.000Z",
+      "followers": 3688,
+      "following": 108,
+      "tweets_count": 14557,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "hendrikEbbers",
+      "name": "Hendrik Ebbers",
+      "twitter_id": "37876575",
+      "display_name": "Hendrik Ebbers 👾",
+      "bio": "Helping you to write better Java code & APIs - Java Champion, JavaOne Rockstar, JCP expert group member - ❤️ Star Wars, boardgames, Java and hardrock",
+      "location": "Dortmund, Germany",
+      "url": "https://t.co/2b3eX4NJ6v",
+      "profile_image": "https://pbs.twimg.com/profile_images/686294486167719937/H8WvFWmY.png",
+      "verified": false,
+      "created_at": "2009-05-05T07:02:21.000Z",
+      "followers": 3509,
+      "following": 1342,
+      "tweets_count": 11857,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "jmdoudoux",
+      "name": "Jean-Michel Doudoux",
+      "twitter_id": "217937587",
+      "display_name": "Jean-Michel Doudoux",
+      "bio": "Java Champion, didacticiel Java et Eclipse, Ju Jitsu et arts martiaux, Delphi, modélisme et figurines",
+      "location": "Pont-à-Mousson, France",
+      "url": "https://t.co/CNCjTXoTMm",
+      "profile_image": "https://pbs.twimg.com/profile_images/1173267077/jmdoudoux.jpg",
+      "verified": false,
+      "created_at": "2010-11-20T23:39:24.000Z",
+      "followers": 3508,
+      "following": 286,
+      "tweets_count": 905,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "bbenz",
+      "name": "Brian Benz",
+      "twitter_id": "19479109",
+      "display_name": "Brian Benz",
+      "bio": "AI advocate for @Microsoft @Azure.  Proud to be \na @Java_Champions.  Also at bbenz@mastodon.social",
+      "location": "Las Vegas, NV, USA",
+      "url": "https://t.co/QYaGoeZI0Z",
+      "profile_image": "https://pbs.twimg.com/profile_images/1560317195216834561/QdlYUJUm.jpg",
+      "verified": false,
+      "created_at": "2009-01-25T05:32:48.000Z",
+      "followers": 3275,
+      "following": 3811,
+      "tweets_count": 12253,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "oezcanacar",
+      "name": "Oezcan Acar",
+      "twitter_id": "14332365",
+      "display_name": "Özcan Acar",
+      "bio": "Güzel ahlak fiildir, sözde kalani ise sadece bir sifat!\n\nInsta: https://t.co/dkfbFf7HQN\nWeb: https://t.co/1p4PUC5Rtk",
+      "profile_image": "https://pbs.twimg.com/profile_images/2007108755335307264/KKyiTUyn.jpg",
+      "verified": false,
+      "created_at": "2008-04-08T13:55:23.000Z",
+      "followers": 3119,
+      "following": 169,
+      "tweets_count": 2419,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.328Z"
+    },
+    {
+      "handle": "monacotoni",
+      "name": "Anton (Toni) Epple",
+      "twitter_id": "177195405",
+      "display_name": "Anton Epple ☕🇺🇦",
+      "bio": "Here to share interesting Java and UI Development content. Author and Trainer, Java Champion, JavaONE Rockstar Duke's Choice Winner, @DukeScript Developer",
+      "location": "München",
+      "url": "https://t.co/s4M6fq34ze",
+      "profile_image": "https://pbs.twimg.com/profile_images/1109771044427124742/KpX-pd54.png",
+      "verified": false,
+      "created_at": "2010-08-11T14:08:36.000Z",
+      "followers": 2889,
+      "following": 262,
+      "tweets_count": 6256,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "OlehDokuka",
+      "name": "Oleh Dokuka",
+      "twitter_id": "799013026657685506",
+      "display_name": "Oleh Dokuka",
+      "bio": "#Reactive #Guru. Speaker, Writer. Leading @RSocketIO. Ex @ProjectReactor lead at @VMwareTanzu. One of the @Java_Champions. All things #Reactive",
+      "location": "Ukraine",
+      "url": "https://t.co/QEFuSZHUWH",
+      "profile_image": "https://pbs.twimg.com/profile_images/1197586854255714311/PgQ6ONgD.jpg",
+      "verified": false,
+      "created_at": "2016-11-16T22:15:25.000Z",
+      "followers": 2835,
+      "following": 234,
+      "tweets_count": 1863,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "gbevin",
+      "name": "Geert Bevin",
+      "twitter_id": "4495051",
+      "display_name": "Geert Bevin",
+      "bio": "Not posting here anymore, find me elsewhere with @gbevin, on Mastodon: https://t.co/8AD23iZ8Pg and Bluesky: https://t.co/yhG2kZeQqJ",
+      "location": "50.499452,4.240799",
+      "url": "https://t.co/8AD23iZ8Pg",
+      "profile_image": "https://pbs.twimg.com/profile_images/1827131164106104832/j2W9tXbe.jpg",
+      "verified": false,
+      "created_at": "2007-04-13T13:06:40.000Z",
+      "followers": 2757,
+      "following": 1056,
+      "tweets_count": 12802,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "RichardFichtner",
+      "name": "Richard Fichtner",
+      "twitter_id": "1949293987",
+      "display_name": "💻☕ Richard Fichtner",
+      "bio": "@XDEVSoftware, Loves Java ❤️☕, @Java_Champions, Founder JUG Oberpfalz, Co-organizer @jcon_conference, @IBMChampions, @oracleace, Vaadin Champion, Dongolorian",
+      "location": "Weiden Bavaria Germany Earth",
+      "url": "https://t.co/m4PJjXFI0Z",
+      "profile_image": "https://pbs.twimg.com/profile_images/1498636819017179142/wp1nie3S.jpg",
+      "verified": false,
+      "created_at": "2013-10-09T13:24:26.000Z",
+      "followers": 2660,
+      "following": 1600,
+      "tweets_count": 1909,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "jpbempel",
+      "name": "Jean-Philippe Bempel",
+      "twitter_id": "189968067",
+      "display_name": "Jean-Philippe Bempel @jpbempel.bsky.social",
+      "bio": "Sr Sw Eng @Datadoghq, optimize software running on JVM. Love performance topics and mechanical sympathy supporter. Java Champion & @javamissionctrl committer",
+      "location": "Paris",
+      "url": "https://t.co/xjB9ZhpxVi",
+      "profile_image": "https://pbs.twimg.com/profile_images/1019190216995811328/YARM51Fl.jpg",
+      "verified": false,
+      "created_at": "2010-09-12T18:38:03.000Z",
+      "followers": 2565,
+      "following": 207,
+      "tweets_count": 7399,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "delawen",
+      "name": "María Arias de Reyna",
+      "twitter_id": "154456790",
+      "display_name": "@delawen@floss.social",
+      "bio": "Java Champion, Feminist, FLOSS, GeoInquieta, Atheist, Crazy of the Pussy, Social Justice Sorceress, Chaotic Good\n\nShe/her\n\nhttps://t.co/DYuwq8Efye",
+      "location": "Sevilla",
+      "url": "https://t.co/tyAHxk9knZ",
+      "profile_image": "https://pbs.twimg.com/profile_images/1036793599013224448/Tq_bNuU6.jpg",
+      "verified": false,
+      "created_at": "2010-06-11T08:14:34.000Z",
+      "followers": 2409,
+      "following": 622,
+      "tweets_count": 37756,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "badrelhouari",
+      "name": "Badr El Houari",
+      "twitter_id": "108315580",
+      "display_name": "Badr El Houari -a.k.a xRider-",
+      "bio": "Serial Techpreneur. DevoxxMA Chair. Founder & CIO @ xHub. Always Developper, Surfer & Rider ! Java Champion & Father🤙",
+      "location": "Casablanca Morocco",
+      "url": "https://t.co/ztsGq4L3VJ",
+      "profile_image": "https://pbs.twimg.com/profile_images/1881308018354126848/fFXrEG4Y.jpg",
+      "verified": false,
+      "created_at": "2010-01-25T15:08:35.000Z",
+      "followers": 2354,
+      "following": 211,
+      "tweets_count": 5442,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "patbaumgartner",
+      "name": "Patrick Baumgartner",
+      "twitter_id": "16811339",
+      "display_name": "Patrick Baumgartner",
+      "bio": "Working @42talents. Spring Trainer @VMwareTanzu. Organize @VoxxedZurich, Agile Breakfast ZH/SG, Board member of @jugch, Software Crafters Zurich & @SoCraTes_CH",
+      "location": "Zurich",
+      "url": "https://t.co/4fwtRi5VIC",
+      "profile_image": "https://pbs.twimg.com/profile_images/1721111455724908545/seA1O2ro.jpg",
+      "verified": false,
+      "created_at": "2008-10-16T18:29:11.000Z",
+      "followers": 2349,
+      "following": 1514,
+      "tweets_count": 9598,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "icougil",
+      "name": "Nacho Cougil",
+      "twitter_id": "9760582",
+      "display_name": "Nacho Cougil 🕊",
+      "bio": "Founder of @BarcelonaJUG | Cofounder of @dev_bcn | Java Champion | Principal Software Engineer at @dynatrace | \nJava & JVM stuff, forensics, irony & more",
+      "location": "Barcelona, Spain",
+      "url": "https://t.co/MICOiRVKIX",
+      "profile_image": "https://pbs.twimg.com/profile_images/1376512940984123393/BvU6hkHj.jpg",
+      "verified": false,
+      "created_at": "2007-10-28T20:42:39.000Z",
+      "followers": 2294,
+      "following": 2317,
+      "tweets_count": 16482,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "TCoolsIT",
+      "name": "Tom Cools",
+      "twitter_id": "796272536485003264",
+      "display_name": "Tom Cools",
+      "bio": "DevRel Engineer @TimefoldAI | Conference speaker 🗣️ | #Java | @Java_Champions | @BeJUG Organizer | Teacher and Trainer 👨‍🏫",
+      "location": "Antwerp, Belgium",
+      "url": "https://t.co/5WczLC8pMd",
+      "profile_image": "https://pbs.twimg.com/profile_images/1476113489852874758/wEhoSG8e.jpg",
+      "verified": false,
+      "created_at": "2016-11-09T08:45:41.000Z",
+      "followers": 2177,
+      "following": 798,
+      "tweets_count": 5992,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "jamdiazdiaz",
+      "name": "José Díaz",
+      "twitter_id": "233589200",
+      "display_name": "José Díaz",
+      "bio": "Father ★ Community guy ★ Java Champion ★ Entrepreneur ★  Developer ★ Software architect  ★  Trainer ★ Peru JUG  Leader (@jamdiazdiaz in mastodon and bluesky)",
+      "location": "Ventanilla - Callao, Perú",
+      "url": "https://t.co/CCMiN7ftD0",
+      "profile_image": "https://pbs.twimg.com/profile_images/1348030974035111941/ut18lNYB.jpg",
+      "verified": false,
+      "created_at": "2011-01-03T16:38:57.000Z",
+      "followers": 1956,
+      "following": 1820,
+      "tweets_count": 6582,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "axelfontaine",
+      "name": "Axel Fontaine",
+      "twitter_id": "65015565",
+      "display_name": "Axel Fontaine",
+      "bio": "Creator @sprinters_sh, @flywaydb (sold to @redgate), @CloudCaptainSH.\nJava Champion, JavaOne RockStar",
+      "location": "Munich, Germany",
+      "url": "https://t.co/nU1gTfyDiW",
+      "profile_image": "https://pbs.twimg.com/profile_images/441275336345407488/k7xICtmK.jpeg",
+      "verified": false,
+      "created_at": "2009-08-12T12:00:51.000Z",
+      "followers": 1914,
+      "following": 99,
+      "tweets_count": 1600,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "HillmerCh",
+      "name": "Hillmer Chona",
+      "twitter_id": "55671305",
+      "display_name": "Hillmer Ch.",
+      "bio": "Software developer | Sometimes speaker | Member of @java_champions",
+      "profile_image": "https://pbs.twimg.com/profile_images/1225796401365475329/SvFj1Xyq.jpg",
+      "verified": false,
+      "created_at": "2009-07-10T21:36:17.000Z",
+      "followers": 1845,
+      "following": 395,
+      "tweets_count": 1831,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "BertErtman",
+      "name": "Bert Ertman",
+      "twitter_id": "91842580",
+      "display_name": "Bert Ertman",
+      "bio": "Java & Cloud Postmodernist at Luminis. Serial conference organizer. Recognized Java Champion and JavaOne Rock Star Speaker. Book Author. Made in Holland.",
+      "location": "Netherlands",
+      "url": "https://t.co/jbmfICbnGC",
+      "profile_image": "https://pbs.twimg.com/profile_images/3474572133/cd1c7b12df1e83f962c848b400aced2d.png",
+      "verified": false,
+      "created_at": "2009-11-22T18:40:51.000Z",
+      "followers": 1702,
+      "following": 346,
+      "tweets_count": 3165,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "gdams_",
+      "name": "George Adams",
+      "twitter_id": "2826309879",
+      "display_name": "George Adams",
+      "bio": "Go Group Manager @Microsoft, Java Champion, Chairman @adoptium. Tweets are my own.",
+      "location": "Winchester, England",
+      "url": "https://t.co/D09m96LvCX",
+      "profile_image": "https://pbs.twimg.com/profile_images/1059945215170146304/ORFQFEdq.jpg",
+      "verified": false,
+      "created_at": "2014-10-12T22:32:37.000Z",
+      "followers": 1679,
+      "following": 686,
+      "tweets_count": 677,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "mertcal",
+      "name": "Mert Caliskan",
+      "twitter_id": "1553661582",
+      "display_name": "Mert",
+      "bio": "Principal Engineer at @Bitbucket, @Atlassian • @Java Champion • Author of Beginning @Springframework & @PrimeFaces Cookbook.",
+      "location": "Menlo Park, CA",
+      "url": "https://t.co/Sd8D3cdaKh",
+      "profile_image": "https://pbs.twimg.com/profile_images/1182205252331868161/1hZzVelF.jpg",
+      "verified": false,
+      "created_at": "2013-06-28T18:01:15.000Z",
+      "followers": 1667,
+      "following": 721,
+      "tweets_count": 5668,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "jfarcand",
+      "name": "Jean-François Arcand",
+      "twitter_id": "18298703",
+      "display_name": "jfarcand",
+      "bio": "Author of Atmosphere Framework, AsyncHttpClient, and Grizzly/GlassFish NIO. Java Champion and Ultratrail runner!",
+      "location": "Montréal",
+      "url": "https://t.co/OB6WW1mTOR",
+      "profile_image": "https://pbs.twimg.com/profile_images/1306064146237194240/-xcXNIgs.jpg",
+      "verified": false,
+      "created_at": "2008-12-22T02:46:16.000Z",
+      "followers": 1622,
+      "following": 305,
+      "tweets_count": 3641,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "hans_d",
+      "name": "Hans Dockter",
+      "twitter_id": "25096865",
+      "display_name": "Hans Dockter",
+      "bio": "Founder & CEO @Gradle — creator of Gradle Build Tool, co-founder of Develocity | Physicist | Java Champion | Continuous Delivery in the GenAI era",
+      "location": "San Francisco",
+      "url": "https://t.co/ZocebYnsRQ",
+      "profile_image": "https://pbs.twimg.com/profile_images/858717969848729600/8SVLYjhX.jpg",
+      "verified": false,
+      "created_at": "2009-03-18T16:04:46.000Z",
+      "followers": 1621,
+      "following": 2,
+      "tweets_count": 296,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "danieldeluca",
+      "name": "Daniel De Luca",
+      "twitter_id": "14715465",
+      "display_name": "Daniel De Luca",
+      "bio": "CTO/SVP, Software Architect, Java, AKKA enthusiast, BeJUG, Devoxx and Devoxx4Kids Steering member, Java Champion, Saxophonist, MTBiker | Tweets are my own!",
+      "location": "Ottignies-LLN, Belgium",
+      "url": "https://t.co/7VCkUuBsPd",
+      "profile_image": "https://pbs.twimg.com/profile_images/1357262311464067074/8kxOYMKQ.jpg",
+      "verified": false,
+      "created_at": "2008-05-09T16:57:09.000Z",
+      "followers": 1575,
+      "following": 927,
+      "tweets_count": 16559,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "kevindubois",
+      "name": "Kevin Dubois",
+      "twitter_id": "34386901",
+      "display_name": "Kevin Dubois",
+      "bio": "Find me on BlueSky @kevindubois.com\n\nJava Champion | CNCF DevEX Tag Lead | Author | Speaker | 🥑 Developer Advocate @IBM",
+      "location": "Vollèges, Switzerland",
+      "url": "https://t.co/MxVc0WvQ94",
+      "profile_image": "https://pbs.twimg.com/profile_images/1925655764820992000/kd5yUoyu.jpg",
+      "verified": false,
+      "created_at": "2009-04-22T20:28:28.000Z",
+      "followers": 1546,
+      "following": 419,
+      "tweets_count": 3383,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "_pitest",
+      "name": "Henry Coles",
+      "twitter_id": "1146666042418221056",
+      "display_name": "Henry Coles",
+      "bio": "Fiction: https://t.co/2EA1IupNee repped by @lucyjuckes\nTech: https://t.co/pDPKanqIdY Made mutation testing (sort of) popular @Java_Champions",
+      "location": "Edinburgh, Scotland",
+      "url": "https://t.co/X3WGsKJBOK",
+      "profile_image": "https://pbs.twimg.com/profile_images/1897312067666714624/JVEfqFMT.jpg",
+      "verified": false,
+      "created_at": "2019-07-04T06:24:23.000Z",
+      "followers": 1539,
+      "following": 395,
+      "tweets_count": 2692,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "hannotify",
+      "name": "Hanno Embregts",
+      "twitter_id": "36095512",
+      "display_name": "Hanno Embregts 🎤🎸",
+      "bio": "Java Champion 🏆 Oracle ACE Pro ♠️ Java Developer by day ☕️ \nMusician by night 🎸 A bit of both at conferences 🎤 @InfoSupportBV 👨🏼‍💻 @NLJUG JUG leader 🎟️",
+      "location": "🇳🇱",
+      "url": "https://t.co/l7glXwLEAh",
+      "profile_image": "https://pbs.twimg.com/profile_images/1820530975035506688/toeovtsl.jpg",
+      "verified": false,
+      "created_at": "2009-04-28T15:36:01.000Z",
+      "followers": 1520,
+      "following": 671,
+      "tweets_count": 5205,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "allmycode",
+      "name": "Barry Burd",
+      "twitter_id": "851078360",
+      "display_name": "Barry Burd",
+      "bio": "Author of Java For Dummies, Android Application Development All-in-One For Dummies, and other books",
+      "profile_image": "https://pbs.twimg.com/profile_images/1002304319113216000/2TrOZa5g.jpg",
+      "verified": false,
+      "created_at": "2012-09-28T13:36:04.000Z",
+      "followers": 1490,
+      "following": 56,
+      "tweets_count": 720,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "simonebordet",
+      "name": "Simone Bordet",
+      "twitter_id": "90913482",
+      "display_name": "Simone Bordet",
+      "bio": "Jetty / CometD Lead. Java and JVM. Web / Network Protocols (HTTP, WebSocket, HTTP/2). Intermittent Fasting. Some CrossFit.",
+      "location": "Torino, Italy",
+      "url": "https://t.co/PGsea9T6Y2",
+      "profile_image": "https://pbs.twimg.com/profile_images/532743481/simon-2006.png",
+      "verified": false,
+      "created_at": "2009-11-18T17:16:59.000Z",
+      "followers": 1456,
+      "following": 158,
+      "tweets_count": 634,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "BertBates",
+      "name": "Bert Bates",
+      "twitter_id": "16811158",
+      "display_name": "Bert Bates",
+      "bio": "Spot false dilemmas now, ask me how!",
+      "location": "Santa Cruz, Ca",
+      "profile_image": "https://pbs.twimg.com/profile_images/62216141/b2.jpg",
+      "verified": false,
+      "created_at": "2008-10-16T18:17:37.000Z",
+      "followers": 1262,
+      "following": 356,
+      "tweets_count": 1238,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "gail_asgteach",
+      "name": "Gail C. Anderson",
+      "twitter_id": "14848499",
+      "display_name": "Gail Anderson (gailcanderson on threads) ☮️",
+      "bio": "Java Champion, Java/JavaFX Developer, Author, Guitar Player",
+      "location": "Southern California (SoCal)",
+      "url": "https://t.co/is5N5HYQiY",
+      "profile_image": "https://pbs.twimg.com/profile_images/57777914/2005_1225BajaKayak0089crop.JPG",
+      "verified": false,
+      "created_at": "2008-05-20T18:48:20.000Z",
+      "followers": 1237,
+      "following": 435,
+      "tweets_count": 595,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "briandemers",
+      "name": "Brian Demers",
+      "twitter_id": "39572206",
+      "display_name": "Brian Demers",
+      "bio": "Father, Geek 🤓, Beekeeper 🐝, Java Champion ♨️, and Developer Advocate 🥑 @Gradle\n\n@bdemers@bdemers.io\nhttps://t.co/Br4cykxS4A",
+      "location": "New Hampshire, USA",
+      "profile_image": "https://pbs.twimg.com/profile_images/570042130358235136/SnE0mhCW.jpeg",
+      "verified": false,
+      "created_at": "2009-05-12T19:19:52.000Z",
+      "followers": 1182,
+      "following": 750,
+      "tweets_count": 1717,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "ludoch",
+      "name": "Ludovic Champenois",
+      "twitter_id": "24729053",
+      "display_name": "Ludovic Champenois",
+      "bio": "Virtual Turing Machinist and Extinguished Engineer @Google.",
+      "location": "Valley",
+      "url": "https://t.co/KA4Xx0QEDX",
+      "profile_image": "https://pbs.twimg.com/profile_images/1275750170957721605/GJHFdxZJ.jpg",
+      "verified": false,
+      "created_at": "2009-03-16T17:21:41.000Z",
+      "followers": 1169,
+      "following": 394,
+      "tweets_count": 3513,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "bokmann",
+      "name": "David Bock",
+      "twitter_id": "14662889",
+      "display_name": "@bokmann@ruby.social",
+      "bio": "i’m not a blue checkmark kind-of guy. you can use my identity as you see fit: https://t.co/AMgoinPGOu @bokmann@ruby.social",
+      "location": "Purcellville, VA",
+      "url": "https://t.co/5Zb4aGAiKz",
+      "profile_image": "https://pbs.twimg.com/profile_images/858101203120644098/jkiC9dRp.jpg",
+      "verified": false,
+      "created_at": "2008-05-05T18:26:34.000Z",
+      "followers": 1125,
+      "following": 1172,
+      "tweets_count": 23661,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "edeandrea",
+      "name": "Eric Deandrea",
+      "twitter_id": "170505878",
+      "display_name": "Eric Deandrea (@ericdeandrea.dev)",
+      "bio": "@Java_Champions | Trying to not be here anymore - find me at https://t.co/cdGztVYBFM",
+      "location": "New Hampshire",
+      "url": "https://t.co/cdGztVYBFM",
+      "profile_image": "https://pbs.twimg.com/profile_images/1899068593498628096/b6IYZI1C.jpg",
+      "verified": false,
+      "created_at": "2010-07-25T01:18:34.000Z",
+      "followers": 1112,
+      "following": 261,
+      "tweets_count": 2368,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "rotty3000",
+      "name": "Raymond Augé",
+      "twitter_id": "21794529",
+      "display_name": "Raymond Augé",
+      "bio": "Husband, Father of 2, Senior Software Architect @ Liferay, Inc., ASF Member, Java Champion, Open Source contributor. It's mostly about hockey on here these days",
+      "location": "ÜT: 46.563321,-81.171313",
+      "url": "https://t.co/S2kMcgScEb",
+      "profile_image": "https://pbs.twimg.com/profile_images/497795495087988736/BkWxjVIN.jpeg",
+      "verified": false,
+      "created_at": "2009-02-24T20:39:21.000Z",
+      "followers": 1082,
+      "following": 69,
+      "tweets_count": 4298,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "edwinderks",
+      "name": "Edwin Derks",
+      "twitter_id": "91667601",
+      "display_name": "Edwin Derks 🇳🇱",
+      "bio": "Java Champion | Architect | Writer | Speaker | Contributor for Jakarta EE and MicroProfile | Car Maniac | Extreme Dance & Metal Music Fan |",
+      "location": "ÜT: 51.559716,5.049114",
+      "profile_image": "https://pbs.twimg.com/profile_images/1138126159923875840/LVYof_0f.jpg",
+      "verified": false,
+      "created_at": "2009-11-21T22:29:39.000Z",
+      "followers": 1024,
+      "following": 300,
+      "tweets_count": 1566,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "eudriscabrera",
+      "name": "Eudris Cabrera",
+      "twitter_id": "1576438136",
+      "display_name": "Eudris Cabrera",
+      "bio": "Software Developer - JUG Leader @JavaDominicano - Organizer @JConfDominicana - Linux User - OpenSource Enthusiast-Baseball Lover-{Merengue,Salsa and Bachata}",
+      "location": "Santiago, Dominican Republic",
+      "url": "https://t.co/kutKBjBnEr",
+      "profile_image": "https://pbs.twimg.com/profile_images/1828452240211750912/rztwP5wR.jpg",
+      "verified": false,
+      "created_at": "2013-07-08T01:25:32.000Z",
+      "followers": 1018,
+      "following": 827,
+      "tweets_count": 4271,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "babadopulos",
+      "name": "Fernando Babadopulos",
+      "twitter_id": "31584781",
+      "display_name": "Fernando Babadopulos",
+      "bio": "Eternal software developer, serial entrepreneur and speaker. Big data enthusiast. @Java_Champions, @dev_champions. Co-Founder at https://t.co/c3EG20dWVL",
+      "location": "São Paulo, Brésil",
+      "url": "https://t.co/x1SNbTgh4S",
+      "profile_image": "https://pbs.twimg.com/profile_images/915254321062731777/XU2om5k3.jpg",
+      "verified": false,
+      "created_at": "2009-04-16T01:07:31.000Z",
+      "followers": 1007,
+      "following": 132,
+      "tweets_count": 723,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "UnFroMage",
+      "name": "Stéphane Épardaud",
+      "twitter_id": "16127142",
+      "display_name": "Stéphane Épardaud",
+      "bio": "FroMage. Works on Quarkus, Vert.x, Ceylon for Red Hat, co-lead of Riviera JUG, Riviera DEV and is generally French…",
+      "location": "Au frais",
+      "url": "http://t.co/zAGNNmB5dk",
+      "profile_image": "https://pbs.twimg.com/profile_images/463620106367410177/Wp_41ZD2.jpeg",
+      "verified": false,
+      "created_at": "2008-09-04T09:46:26.000Z",
+      "followers": 817,
+      "following": 148,
+      "tweets_count": 8169,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "Ian_Darwin",
+      "name": "Ian F. Darwin",
+      "twitter_id": "203189409",
+      "display_name": "Ian Darwin 🇨🇦 🇺🇦",
+      "bio": "Techie (Java Champion, Android/Flutter, OpenBSD, EVs), Author, Conference Speaker, Tech instructor, Photographer. For truth, freedom, humanity, science.",
+      "location": "Ontario, Canada",
+      "url": "https://t.co/PVf7mE09FR",
+      "profile_image": "https://pbs.twimg.com/profile_images/1145627089/Face.png",
+      "verified": false,
+      "created_at": "2010-10-15T18:41:52.000Z",
+      "followers": 790,
+      "following": 803,
+      "tweets_count": 5332,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "jean_bisutti",
+      "name": "Jean Bisutti",
+      "twitter_id": "3235376684",
+      "display_name": "Jean Bisutti",
+      "bio": "Software engineer at Microsoft, creator of @QuickPerf open-source projects, Java Champion, jeanbisutti on Bluesky, jean_bisutti on Mastodon",
+      "location": "Paris",
+      "profile_image": "https://pbs.twimg.com/profile_images/1173293882991357952/dWfXkf1r.jpg",
+      "verified": false,
+      "created_at": "2015-06-03T19:43:28.000Z",
+      "followers": 789,
+      "following": 1115,
+      "tweets_count": 1185,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "Paul_ASGTeach",
+      "name": "Paul L. Anderson",
+      "twitter_id": "445714475",
+      "display_name": "Paul Anderson",
+      "bio": "Author and Lecturer, Anderson Software Group, Java Champion, Oracle Ace Member, Bass Player",
+      "location": "Encinitas, CA ",
+      "url": "https://t.co/nqq4YvNpzH",
+      "profile_image": "https://pbs.twimg.com/profile_images/2361970623/5nfjd36b93a8pfe4w5rx.jpeg",
+      "verified": false,
+      "created_at": "2011-12-24T19:22:55.000Z",
+      "followers": 748,
+      "following": 89,
+      "tweets_count": 175,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "cassandraonjava",
+      "name": "Cassandra Chin",
+      "twitter_id": "547272702",
+      "display_name": "Cassandra Chin",
+      "bio": "I am a keynote speaker, author of Raising Young Coders by Apress, podcast host, children's workshop instructor, and a computer science student.",
+      "location": "Belmont, CA",
+      "profile_image": "https://pbs.twimg.com/profile_images/1980014492957224960/yTHLmPeZ.jpg",
+      "verified": false,
+      "created_at": "2012-04-07T00:12:05.000Z",
+      "followers": 693,
+      "following": 299,
+      "tweets_count": 178,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "deepakalur",
+      "name": "Deepak Alur",
+      "twitter_id": "16655182",
+      "display_name": "deepakalur",
+      "bio": "love building great teams & delightful products - VPE @OneMedical/Amazon - previously @OpenGov @Anaplan @Chartcube @JackBe @Sun @eBay @CMC",
+      "location": "Oakland, CA",
+      "url": "https://t.co/8EOd55GAHr",
+      "profile_image": "https://pbs.twimg.com/profile_images/491082489650094082/ChSnl2qt.png",
+      "verified": false,
+      "created_at": "2008-10-08T20:01:39.000Z",
+      "followers": 677,
+      "following": 738,
+      "tweets_count": 2226,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "patriot1burke",
+      "name": "Bill Burke",
+      "twitter_id": "26763164",
+      "display_name": "Bill Burke",
+      "bio": "",
+      "profile_image": "https://pbs.twimg.com/profile_images/1008733974460432384/jLFpi5Zo.jpg",
+      "verified": false,
+      "created_at": "2009-03-26T14:42:16.000Z",
+      "followers": 653,
+      "following": 53,
+      "tweets_count": 117,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "JoCosti",
+      "name": "Joel Costigliola",
+      "twitter_id": "85056474",
+      "display_name": "Joel Costigliola",
+      "bio": "",
+      "profile_image": "https://pbs.twimg.com/profile_images/2296593614/z34gagbvbx2b8juxf6lh.jpeg",
+      "verified": false,
+      "created_at": "2009-10-25T10:47:11.000Z",
+      "followers": 601,
+      "following": 53,
+      "tweets_count": 405,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "bbossola",
+      "name": "Bruno Bossola",
+      "twitter_id": "7201382",
+      "display_name": "Bruno Bossola",
+      "bio": "CTO, Java Champion, Developer, serious about tests. Find me now at https://t.co/k4D1vQUL2O",
+      "location": "London, England",
+      "url": "https://t.co/yxrDflVhz1",
+      "profile_image": "https://pbs.twimg.com/profile_images/658709400111181824/z8WH6deA.jpg",
+      "verified": false,
+      "created_at": "2007-07-02T09:49:52.000Z",
+      "followers": 550,
+      "following": 205,
+      "tweets_count": 1235,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "aristidesvbravo",
+      "name": "Aristides Villareal",
+      "twitter_id": "1460621642124742656",
+      "display_name": "aristides.villarreal",
+      "bio": "@java_champions,\nhttps://t.co/kxv3csFnD7\njmoordb-core, https://t.co/hCgj2XskA8",
+      "location": "Panama",
+      "url": "https://t.co/lUUTVvdsjz",
+      "profile_image": "https://pbs.twimg.com/profile_images/1460626709997314051/XisV9huv.jpg",
+      "verified": false,
+      "created_at": "2021-11-16T14:53:45.000Z",
+      "followers": 519,
+      "following": 1114,
+      "tweets_count": 760,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "PandaConstantin",
+      "name": "Drabo Constantin",
+      "twitter_id": "17510392",
+      "display_name": "Drabo Constantin",
+      "bio": "Apache NetBeans(@netBeans),@Fedora and @Java advocate | @Java_Champions | @Neo4J ninja | IBM @Qiskit Advocate",
+      "profile_image": "https://pbs.twimg.com/profile_images/753034955274485761/S4TLTuoH.jpg",
+      "verified": false,
+      "created_at": "2008-11-20T12:49:24.000Z",
+      "followers": 392,
+      "following": 684,
+      "tweets_count": 827,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "danieldfjug",
+      "name": "Daniel deOliveira",
+      "twitter_id": "2828123149",
+      "display_name": "DrJUG",
+      "bio": "Daniel deOliveira (DrJUG) is the founder and has been the JUG Leader, since February 1998, of the Federal District Java Users Group – DFJUG.",
+      "location": "Brasilia",
+      "url": "http://t.co/utqTKAwcHU",
+      "profile_image": "https://pbs.twimg.com/profile_images/514411804521279490/0MLyQziZ.png",
+      "verified": false,
+      "created_at": "2014-09-23T13:48:22.000Z",
+      "followers": 386,
+      "following": 84,
+      "tweets_count": 487,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.345Z"
+    },
+    {
+      "handle": "alblue",
+      "name": "Dr. Alex Blewitt",
+      "twitter_id": "20775620",
+      "display_name": "😷Alex Blewitt 🇬🇧🇪🇺",
+      "bio": "Java Champion, Eclipse guru, Mac fanatic and occasional fair weather pilot. Thoughts and retweets here are my own",
+      "location": "Milton Keynes",
+      "url": "https://t.co/kaHetys14K",
+      "profile_image": "https://pbs.twimg.com/profile_images/1281325717/AlexHeadshotRight.png",
+      "verified": false,
+      "created_at": "2009-02-13T14:59:05.000Z",
+      "followers": 358,
+      "following": 195,
+      "tweets_count": 60059,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "imifos",
+      "name": "Tasha Carl",
+      "twitter_id": "997690993",
+      "display_name": "Imifos",
+      "bio": "",
+      "profile_image": "https://pbs.twimg.com/profile_images/1886395544056053760/93wzVWkY.jpg",
+      "verified": false,
+      "created_at": "2012-12-08T18:09:49.000Z",
+      "followers": 356,
+      "following": 1168,
+      "tweets_count": 24,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "magnocav",
+      "name": "Magno Cavalcante",
+      "twitter_id": "62038562",
+      "display_name": "Magno A. Cavalcante",
+      "bio": "Software Engineer",
+      "location": "Milano, Lombardia",
+      "profile_image": "https://pbs.twimg.com/profile_images/1698574838732840961/8aq9Pxmu.jpg",
+      "verified": false,
+      "created_at": "2009-08-01T14:01:27.000Z",
+      "followers": 311,
+      "following": 342,
+      "tweets_count": 755,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "luciobenfante",
+      "name": "Lucio Benfante",
+      "twitter_id": "90360917",
+      "display_name": "Lucio Benfante",
+      "bio": "Java, Javascript, React developer and teacher. JUG Padova Leader. Java Champion.",
+      "location": "Italy",
+      "url": "https://t.co/bcLF43WHa8",
+      "profile_image": "https://pbs.twimg.com/profile_images/1915294310863355904/tZZ-bKdw.jpg",
+      "verified": false,
+      "created_at": "2009-11-16T09:40:13.000Z",
+      "followers": 183,
+      "following": 88,
+      "tweets_count": 279,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    },
+    {
+      "handle": "vbrabant",
+      "name": "Vincent Brabant",
+      "twitter_id": "142055973",
+      "display_name": "Vincent Brabant",
+      "bio": "Développeur Java, WebServices SOAP, etc",
+      "location": "Bruxelles",
+      "profile_image": "https://pbs.twimg.com/profile_images/848220326307737600/aAygXBLI.jpg",
+      "verified": false,
+      "created_at": "2010-05-09T20:38:13.000Z",
+      "followers": 123,
+      "following": 52,
+      "tweets_count": 826,
+      "recent_tweets": [],
+      "fetched_at": "2026-01-30T15:05:37.344Z"
+    }
+  ]
+};
+    
+    async function loadData() {
+      // Try fetching from file first
+      try {
+        const res = await fetch('../../scrapers/twitter/data.json');
+        if (res.ok) return res.json();
+      } catch (e) {}
+      
+      // Check for embedded data
+      if (embeddedData) return embeddedData;
+      
+      throw new Error('No data available');
+    }
+    
+    loadData()
+      .then(render)
+      .catch(err => {
+        document.getElementById('app').innerHTML = `
+          <div class="card" style="text-align: center; padding: 3rem;">
+            <h2>⚠️ Could not load data</h2>
+            <p style="color: var(--text-muted); margin-top: 1rem;">
+              Make sure scrapers/twitter/data.json exists.<br>
+              Run <code>npm run scrape:api</code> to fetch the data.<br><br>
+              Or start a local server:<br>
+              <code>python3 -m http.server 8080</code><br>
+              Then open <a href="http://localhost:8080/dashboard.html" style="color: var(--primary)">http://localhost:8080/dashboard.html</a>
+            </p>
+          </div>
+        `;
+      });

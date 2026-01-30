@@ -1,0 +1,2685 @@
+scraped_at: 2026-01-30T18:01:47.745Z
+total: 351
+success: 351
+errors: 0
+profiles:
+  - handle: oezcanacar
+    followers: 3,118
+    description: |-
+      Güzel ahlak fiildir, sözde kalani ise sadece bir sifat!
+
+      Insta: http://instagram.com/oezcanacar/
+      Web: http://kurumsaljava.com
+    scraped_at: 2026-01-30T17:29:14.210Z
+    error: null
+    name: Oezcan Acar
+  - handle: gdams_
+    followers: 1,680
+    description: Go Group Manager @Microsoft, Java Champion, Chairman @adoptium.
+      Tweets are my own.
+    scraped_at: 2026-01-30T17:29:20.016Z
+    error: null
+    name: George Adams
+  - handle: bercut2000
+    followers: 5,242
+    description: |-
+      Enjoying Sabbatical 
+      ex-Oracle,ex-DT, ex-VMware, ex-CSC.
+      Speaker, Author, Blogger.
+      @bgjug & @jPrimeConf co-org.
+      One of the @Java_Champions and @groundbreakers.
+    scraped_at: 2026-01-30T17:29:25.573Z
+    error: null
+    name: Dmitry Aleksandrov
+  - handle: mojavelinux
+    followers: 6,785
+    description: >-
+      OSS Developer, Community Catalyst, @Asciidoctor & @AntoraProject Co-Lead,
+      Java Champion, Author, Cornell Alum.
+
+      #FridaysForFuture #BlackLivesMatter
+
+      he/him
+    scraped_at: 2026-01-30T17:29:31.164Z
+    error: null
+    name: Dan Allen
+  - handle: dalmaer
+    followers: 27.1K
+    description: "Bringing nuance to a knife fight, surprisingly older than @bgalbs.
+      AI Dev @ Google Labs. Prev: Google, Shopify, Ajaxian & more. : @almaer.com
+      : dionalmaer"
+    scraped_at: 2026-01-30T17:29:36.786Z
+    error: null
+    name: Dion Almaer
+  - handle: aalmiray
+    followers: 10.6K
+    description: "I code for fun and help others in the process. Java Champion
+      Alumni. Co-founder of Hackergarten & Hack.Commit.Push. Creator of
+      @jreleaser "
+    scraped_at: 2026-01-30T17:29:42.355Z
+    error: null
+    name: Andres Almiray
+  - handle: deepakalur
+    followers: "677"
+    description: love building great teams & delightful products - VPE
+      @OneMedical/Amazon - previously @OpenGov @Anaplan @Chartcube @JackBe @Sun
+      @eBay @CMC
+    scraped_at: 2026-01-30T17:29:47.939Z
+    error: null
+    name: Deepak Alur
+  - handle: gail_asgteach
+    followers: 1,237
+    description: Java Champion, Java/JavaFX Developer, Author, Guitar Player
+    scraped_at: 2026-01-30T17:29:53.547Z
+    error: null
+    name: Gail C. Anderson
+  - handle: Paul_ASGTeach
+    followers: "748"
+    description: Author and Lecturer, Anderson Software Group, Java Champion, Oracle
+      Ace Member, Bass Player
+    scraped_at: 2026-01-30T17:29:59.099Z
+    error: null
+    name: Paul L. Anderson
+  - handle: laytoun
+    followers: 7,410
+    description: Backend @Spotify. Inconsistent posts!
+    scraped_at: 2026-01-30T17:30:04.663Z
+    error: null
+    name: Mohammed Aboullaite
+  - handle: javapapo
+    followers: 4,098
+    description: find me on Bluesky
+    scraped_at: 2026-01-30T17:30:10.269Z
+    error: null
+    name: Paris Apostolopoulos
+  - handle: jfarcand
+    followers: 1,622
+    description: Author of Atmosphere Framework, AsyncHttpClient, and
+      Grizzly/GlassFish NIO. Java Champion and Ultratrail runner!
+    scraped_at: 2026-01-30T17:30:15.811Z
+    error: null
+    name: Jean-François Arcand
+  - handle: karesti
+    followers: 4,353
+    description: |-
+      Dev @Infinispan @QuarkusIO
+      Org @devoxxfr 
+      @Java_Champions 2019
+      Podcaster @lescastcodeurs  2023
+      Improviser https://linktr.ee/improrphelins
+    scraped_at: 2026-01-30T17:30:21.355Z
+    error: null
+    name: Katia Aresti
+  - handle: antonarhipov
+    followers: 10.9K
+    description: >-
+      Developer Advocate @ JetBrains
+
+
+      #java #kotlin #intellij #ai #junie #creativecoding #bass #synth &
+      #kettlebells https://t.me/circleart
+    scraped_at: 2026-01-30T17:30:26.908Z
+    error: null
+    name: Anton Arhipov
+  - handle: delawen
+    followers: 2,409
+    description: >-
+      Java Champion, Feminist, FLOSS, GeoInquieta, Atheist, Crazy of the Pussy,
+      Social Justice Sorceress, Chaotic Good
+
+
+      She/her
+
+
+      http://floss.social/@delawen
+    scraped_at: 2026-01-30T17:30:32.526Z
+    error: null
+    name: María Arias de Reyna
+  - handle: rotty3000
+    followers: 1,082
+    description: Husband, Father of 2, Senior Software Architect @ Liferay, Inc.,
+      ASF Member, Java Champion, Open Source contributor. It's mostly about
+      hockey on here these days
+    scraped_at: 2026-01-30T17:30:38.139Z
+    error: null
+    name: Raymond Augé
+  - handle: babadopulos
+    followers: 1,007
+    description: Eternal software developer, serial entrepreneur and speaker. Big
+      data enthusiast. @Java_Champions, @dev_champions. Co-Founder at
+      http://tail.digital
+    scraped_at: 2026-01-30T17:30:43.681Z
+    error: null
+    name: Fernando Babadopulos
+  - handle: pbakker
+    followers: 7,531
+    description: Staff Engineer at Netflix in Java Platform - Java Champion -
+      Co-author of "Java 9 Modularity" - http://netflix.github.com/dgs
+    scraped_at: 2026-01-30T17:30:49.267Z
+    error: null
+    name: Paul Bakker
+  - handle: ionutbalosin
+    followers: 4,540
+    description: " Principal IT Architect •  Technical Trainer •  Java Champion
+      •  Oracle ACE Associate •  Security Champion •  Speaker •  Blogger"
+    scraped_at: 2026-01-30T17:30:54.866Z
+    error: null
+    name: Ionut Balosin
+  - handle: BertBates
+    followers: 1,261
+    description: Spot false dilemmas now, ask me how!
+    scraped_at: 2026-01-30T17:31:00.422Z
+    error: null
+    name: Bert Bates
+  - handle: patbaumgartner
+    followers: 2,349
+    description: Working @42talents. Spring Trainer @VMwareTanzu. Organize
+      @VoxxedZurich, Agile Breakfast ZH/SG, Board member of @jugch, Software
+      Crafters Zurich & @SoCraTes_CH
+    scraped_at: 2026-01-30T17:31:06.008Z
+    error: null
+    name: Patrick Baumgartner
+  - handle: mon_beck
+    followers: 5,833
+    description: "@Java_Champions. Java VM/GC Performance @Microsoft. Interested in
+      co-teaching @TEALSProgram, @FirstLegoLeague. Enjoys country living."
+    scraped_at: 2026-01-30T17:31:11.588Z
+    error: null
+    name: Monica Beckwith
+  - handle: luciobenfante
+    followers: "183"
+    description: Java, Javascript, React developer and teacher. JUG Padova Leader.
+      Java Champion.
+    scraped_at: 2026-01-30T17:31:17.137Z
+    error: null
+    name: Lucio Benfante
+  - handle: jpbempel
+    followers: 2,564
+    description: Sr Sw Eng @Datadoghq, optimize software running on JVM. Love
+      performance topics and mechanical sympathy supporter. Java Champion &
+      @javamissionctrl committer
+    scraped_at: 2026-01-30T17:31:22.735Z
+    error: null
+    name: Jean-Philippe Bempel
+  - handle: bbenz
+    followers: 3,273
+    description: |-
+      AI advocate for @Microsoft @Azure.  Proud to be 
+      a @Java_Champions.  Also at bbenz@mastodon.social
+    scraped_at: 2026-01-30T17:31:28.286Z
+    error: null
+    name: Brian Benz
+  - handle: emmanuelbernard
+    followers: 8,854
+    description: "Open Source software engineer: Hibernate team, Quarkus co-founder
+      and more. Cloud Services @ Red Hat. @lescastcodeurs founder. Java
+      Champion..."
+    scraped_at: 2026-01-30T17:31:33.814Z
+    error: null
+    name: Emmanuel Bernard
+  - handle: gbevin
+    followers: 2,757
+    description: "Not posting here anymore, find me elsewhere with @gbevin, on
+      Mastodon: https://uwyn.net/@gbevin and Bluesky:
+      https://bsky.app/profile/gbevin.uwyn.com…"
+    scraped_at: 2026-01-30T17:31:39.357Z
+    error: null
+    name: Geert Bevin
+  - handle: AdamBien
+    followers: 36.1K
+    description: |-
+      Author, JavaONE Rockstar, Consultant, Java Champion, AWS Hero
+      https://youtube.com/@bienadam
+      trainer: http://airhacks.live
+      podcaster: http://airhacks.fm
+    scraped_at: 2026-01-30T17:31:44.888Z
+    error: null
+    name: Adam Bien
+  - handle: jean_bisutti
+    followers: "789"
+    description: Software engineer at Microsoft, creator of @QuickPerf open-source
+      projects, Java Champion, jeanbisutti on Bluesky, jean_bisutti on Mastodon
+    scraped_at: 2026-01-30T17:31:50.410Z
+    error: null
+    name: Jean Bisutti
+  - handle: sebi2706
+    followers: 11K
+    description: "Experienced Developer Relations Engineer, husband, speaker, Dad,
+      Open Source, Platform Engineering, Java Champion, "
+    scraped_at: 2026-01-30T17:31:55.954Z
+    error: null
+    name: Sébastien Blanc
+  - handle: dblevins
+    followers: 8,222
+    description: A founder of the Apache TomEE, OpenEJB, Geronimo and MicroProfile
+      projects. Member of Apache, EE4J PMC, Jakarta EE WG, MicroProfile WG. CEO
+      @Tomitribe
+    scraped_at: 2026-01-30T17:32:01.532Z
+    error: null
+    name: David Blevins
+  - handle: alblue
+    followers: null
+    description: Java Champion, Eclipse guru, Mac fanatic and occasional fair
+      weather pilot. Thoughts and retweets here are my own
+    scraped_at: 2026-01-30T17:32:07.091Z
+    error: null
+    name: Dr. Alex Blewitt
+  - handle: joshbloch
+    followers: 65.6K
+    description: Effective Java author, API Designer, CMU Prof, Swell guy, No longer
+      posting here. Find me at http://joshbloch.bsky.social
+    scraped_at: 2026-01-30T17:32:12.652Z
+    error: null
+    name: Dr. Joshua Bloch
+  - handle: bokmann
+    followers: 1,125
+    description: "i’m not a blue checkmark kind-of guy. you can use my identity as
+      you see fit: https://keybase.io/bokmann @bokmann@ruby.social"
+    scraped_at: 2026-01-30T17:32:18.265Z
+    error: null
+    name: David Bock
+  - handle: simonebordet
+    followers: 1,456
+    description: Jetty / CometD Lead. Java and JVM. Web / Network Protocols (HTTP,
+      WebSocket, HTTP/2). Intermittent Fasting. Some CrossFit.
+    scraped_at: 2026-01-30T17:32:23.816Z
+    error: null
+    name: Simone Bordet
+  - handle: brunoborges
+    followers: 35.6K
+    description: "Brazilian Immigrant  Java Champion. Principal Product Manager for
+      #Java  Microsoft.  Previously @OracleDevs, #Azure DevRel. Leads
+      @JavaAtMicrosoft"
+    scraped_at: 2026-01-30T17:32:29.359Z
+    error: null
+    name: Bruno Borges
+  - handle: jeanneboyarsky
+    followers: 5,317
+    description: Software developer in NYC, Java Champion, FIRST FRC mentor,
+      CodeRanch moderator, Toastmaster. Author of OCP Java Certification Study
+      Guides and Real World Java
+    scraped_at: 2026-01-30T17:32:34.974Z
+    error: null
+    name: Jeanne Boyarsky
+  - handle: bbossola
+    followers: "550"
+    description: CTO, Java Champion, Developer, serious about tests. Find me now at
+      https://bsky.app/profile/bbossola.bsky.social…
+    scraped_at: 2026-01-30T17:32:40.526Z
+    error: null
+    name: Bruno Bossola
+  - handle: vbrabant
+    followers: "123"
+    description: Développeur Java, WebServices SOAP, etc
+    scraped_at: 2026-01-30T17:32:46.083Z
+    error: null
+    name: Vincent Brabant
+  - handle: aristidesvbravo
+    followers: "519"
+    description: |-
+      @java_champions,
+      https://amazon.co.uk/Building-Applications-Jakarta-Databases-Microservices/dp/9389423341…
+      jmoordb-core, https://mastodon.social/@avbravo
+    scraped_at: 2026-01-30T17:32:51.619Z
+    error: null
+    name: Aristides Villareal
+  - handle: danielbryantuk
+    followers: 14.9K
+    description: Building platforms @Syntasso | News/Podcast @InfoQ | Web 2.0 coder,
+      platform engineer, Java Champion, CS PhD | cloud/K8s, APIs, IPAs, running
+      | learner/teacher
+    scraped_at: 2026-01-30T17:32:57.208Z
+    error: null
+    name: Dr. Daniel Bryant
+  - handle: patriot1burke
+    followers: "653"
+    description: null
+    scraped_at: 2026-01-30T17:33:02.801Z
+    error: null
+    name: Bill Burke
+  - handle: allmycode
+    followers: 1,490
+    description: Author of Java For Dummies, Android Application Development
+      All-in-One For Dummies, and other books
+    scraped_at: 2026-01-30T17:33:08.359Z
+    error: null
+    name: Barry Burd
+  - handle: edburns
+    followers: 5,516
+    description: Beneficiary of white privilege, Ed Burns is a software stylist,
+      speaker, and author, currently working in the server side Java space.
+      (he/him)
+    scraped_at: 2026-01-30T17:33:13.944Z
+    error: null
+    name: Ed Burns
+  - handle: eudriscabrera
+    followers: 1,018
+    description: Software Developer - JUG Leader @JavaDominicano - Organizer
+      @JConfDominicana - Linux User - OpenSource Enthusiast-Baseball
+      Lover-{Merengue,Salsa and Bachata}
+    scraped_at: 2026-01-30T17:33:19.547Z
+    error: null
+    name: Eudris Cabrera
+  - handle: mertcal
+    followers: 1,667
+    description: Principal Engineer at @Bitbucket, @Atlassian • @Java Champion •
+      Author of Beginning @Springframework & @PrimeFaces Cookbook.
+    scraped_at: 2026-01-30T17:33:25.117Z
+    error: null
+    name: Mert Caliskan
+  - handle: mcannonbrookes
+    followers: 104.2K
+    description: "Dad. Australian  Busy @Atlassian @UtahJazz @SSFCRabbitohs
+      @Grok_Ventures @Boundless_Earth @BlackbirdVC @SunCable1 @RoomToRead and
+      CO2 age: 338.96"
+    scraped_at: 2026-01-30T17:33:30.682Z
+    error: null
+    name: Mike Cannon-Brookes
+  - handle: imifos
+    followers: "356"
+    description: null
+    scraped_at: 2026-01-30T17:33:36.274Z
+    error: null
+    name: Tasha Carl
+  - handle: magnocav
+    followers: "311"
+    description: Software Engineer
+    scraped_at: 2026-01-30T17:33:41.824Z
+    error: null
+    name: Magno Cavalcante
+  - handle: ludoch
+    followers: 1,169
+    description: Virtual Turing Machinist and Extinguished Engineer @Google.
+    scraped_at: 2026-01-30T17:33:47.374Z
+    error: null
+    name: Ludovic Champenois
+  - handle: cassandraonjava
+    followers: "693"
+    description: I am a keynote speaker, author of Raising Young Coders by Apress,
+      podcast host, children's workshop instructor, and a computer science
+      student.
+    scraped_at: 2026-01-30T17:33:52.926Z
+    error: null
+    name: Cassandra Chin
+  - handle: steveonjava
+    followers: 12.9K
+    description: Author, speaker, open-source hacker by night. VP of developer
+      relations at @Neo4j by day.
+    scraped_at: 2026-01-30T17:33:58.506Z
+    error: null
+    name: Stephen Chin
+  - handle: HillmerCh
+    followers: 1,845
+    description: Software developer | Sometimes speaker | Member of @java_champions
+    scraped_at: 2026-01-30T17:34:04.075Z
+    error: null
+    name: Hillmer Chona
+  - handle: cliff_click
+    followers: 4,637
+    description: Creator of the HotSpot JIT, writing compilers since age 15,
+      low-latency GC, Big Data, ML & AI, concurrent and distributed algos, PhD,
+      20+ patents, father of 4
+    scraped_at: 2026-01-30T17:34:09.687Z
+    error: null
+    name: Dr. Cliff Click
+  - handle: cagataycivici
+    followers: 8,561
+    description: Founder of PrimeFaces, PrimeNG, PrimeReact and PrimeVue. Java Champion.
+    scraped_at: 2026-01-30T17:34:15.276Z
+    error: null
+    name: Cagatay Civici
+  - handle: _pitest
+    followers: 1,539
+    description: >-
+      Fiction: https://henrycoles.com repped by @lucyjuckes
+
+      Tech: https://pitest.org Made mutation testing (sort of) popular
+      @Java_Champions
+    scraped_at: 2026-01-30T17:34:20.847Z
+    error: null
+    name: Henry Coles
+  - handle: jodastephen
+    followers: 10.4K
+    description: Java Champion. Occasional blogger and speaker. Best known for Joda
+      projects and JSR-310. All opinions are mine - I do not represent my
+      employer.
+    scraped_at: 2026-01-30T17:34:26.463Z
+    error: null
+    name: Stephen Colebourne
+  - handle: PandaConstantin
+    followers: "392"
+    description: Apache NetBeans(@netBeans),@Fedora and @Java advocate |
+      @Java_Champions | @Neo4J ninja | IBM @Qiskit Advocate
+    scraped_at: 2026-01-30T17:34:32.005Z
+    error: null
+    name: Drabo Constantin
+  - handle: TCoolsIT
+    followers: 2,177
+    description: "DevRel Engineer @TimefoldAI | Conference speaker  | #Java |
+      @Java_Champions | @BeJUG Organizer | Teacher and Trainer "
+    scraped_at: 2026-01-30T17:34:37.604Z
+    error: null
+    name: Tom Cools
+  - handle: JoCosti
+    followers: "601"
+    description: null
+    scraped_at: 2026-01-30T17:34:43.294Z
+    error: null
+    name: Joel Costigliola
+  - handle: radcortez
+    followers: 3,987
+    description: Passionate Developer, Blogger, Youtuber, Speaker, JUG Leader, Java
+      Champion @Redhat @QuarkusIO
+    scraped_at: 2026-01-30T17:34:48.839Z
+    error: null
+    name: Roberto Cortez
+  - handle: icougil
+    followers: 2,295
+    description: >-
+      Founder of @BarcelonaJUG | Cofounder of @dev_bcn | Java Champion |
+      Principal Software Engineer at @dynatrace | 
+
+      Java & JVM stuff, forensics, irony & more
+    scraped_at: 2026-01-30T17:34:54.410Z
+    error: null
+    name: Nacho Cougil
+  - handle: agnes_crepet
+    followers: 4,342
+    description: (S)low Tech Activist - Head of Software Longevity&IT @Fairphone -
+      Co-Founder @NinjaSquad @MiXiTConf - Board member @MoutonNumerique - Member
+      of @duchessfr
+    scraped_at: 2026-01-30T17:35:00.129Z
+    error: null
+    name: Agnes Crepet
+  - handle: holly_cummins
+    followers: 6,513
+    description: "@RedHat - Senior Principal Software Engineer, working on
+      @QuarkusIO. Ex-IBM. Java Champion, developer, author, #cloud surfer and
+      maker. My views are my own."
+    scraped_at: 2026-01-30T17:35:05.734Z
+    error: null
+    name: Dr. Holly Cummins
+  - handle: Ian_Darwin
+    followers: "790"
+    description: Techie (Java Champion, Android/Flutter, OpenBSD, EVs), Author,
+      Conference Speaker, Tech instructor, Photographer. For truth, freedom,
+      humanity, science.
+    scraped_at: 2026-01-30T17:35:11.318Z
+    error: null
+    name: Ian F. Darwin
+  - handle: DaschnerS
+    followers: 7,828
+    description: |-
+      Helping developers solving the challenges of enterprise software. 
+
+      Java Champion, consultant, trainer, book author, creator of @DayCaptainApp
+    scraped_at: 2026-01-30T17:35:16.919Z
+    error: null
+    name: Sebastian Daschner
+  - handle: edeandrea
+    followers: 1,112
+    description: "@Java_Champions | Trying to not be here anymore - find me at
+      https://bsky.app/profile/ericdeandrea.dev…"
+    scraped_at: 2026-01-30T17:35:22.460Z
+    error: null
+    name: Eric Deandrea
+  - handle: deitel
+    followers: 4,009
+    description: The Deitels are best-selling authors of programming-languages books
+      & videos. We also provide instructor-led programming training to
+      organizations worldwide.
+    scraped_at: 2026-01-30T17:35:27.999Z
+    error: null
+    name: Paul J. Deitel
+  - handle: danieldeluca
+    followers: 1,575
+    description: CTO/SVP, Software Architect, Java, AKKA enthusiast, BeJUG, Devoxx
+      and Devoxx4Kids Steering member, Java Champion, Saxophonist, MTBiker |
+      Tweets are my own!
+    scraped_at: 2026-01-30T17:35:33.547Z
+    error: null
+    name: Daniel De Luca
+  - handle: briandemers
+    followers: 1,182
+    description: |-
+      Father, Geek , Beekeeper , Java Champion , and Developer Advocate  @Gradle
+
+      @bdemers@bdemers.io
+      https://bsky.app/profile/bdemers.io…
+    scraped_at: 2026-01-30T17:35:39.082Z
+    error: null
+    name: Brian Demers
+  - handle: edwinderks
+    followers: 1,024
+    description: Java Champion | Architect | Writer | Speaker | Contributor for
+      Jakarta EE and MicroProfile | Car Maniac | Extreme Dance & Metal Music Fan
+      |
+    scraped_at: 2026-01-30T17:35:44.626Z
+    error: null
+    name: Edwin Derks
+  - handle: danieldfjug
+    followers: "386"
+    description: Daniel deOliveira (DrJUG) is the founder and has been the JUG
+      Leader, since February 1998, of the Federal District Java Users Group –
+      DFJUG.
+    scraped_at: 2026-01-30T17:35:50.155Z
+    error: null
+    name: Daniel deOliveira
+  - handle: jamdiazdiaz
+    followers: 1,956
+    description: Father ★ Community guy ★ Java Champion ★ Entrepreneur ★  Developer
+      ★ Software architect  ★  Trainer ★ Peru JUG  Leader (@jamdiazdiaz in
+      mastodon and bluesky)
+    scraped_at: 2026-01-30T17:35:55.745Z
+    error: null
+    name: José Díaz
+  - handle: MaritvanDijk77
+    followers: 5,105
+    description: "Software Developer | Java Champion | Java Developer Advocate @
+      JetBrains | International Keynote Speaker | Pronouns: She/her"
+    scraped_at: 2026-01-30T17:36:01.289Z
+    error: null
+    name: Marit van Dijk
+  - handle: hans_d
+    followers: 1,621
+    description: Founder & CEO @Gradle — creator of Gradle Build Tool, co-founder of
+      Develocity | Physicist | Java Champion | Continuous Delivery in the GenAI
+      era
+    scraped_at: 2026-01-30T17:36:06.875Z
+    error: null
+    name: Hans Dockter
+  - handle: OlehDokuka
+    followers: 2,835
+    description: "#Reactive #Guru. Speaker, Writer. Leading @RSocketIO. Ex
+      @ProjectReactor lead at @VMwareTanzu. One of the @Java_Champions. All
+      things #Reactive"
+    scraped_at: 2026-01-30T17:36:12.472Z
+    error: null
+    name: Oleh Dokuka
+  - handle: jmdoudoux
+    followers: 3,508
+    description: Java Champion, didacticiel Java et Eclipse, Ju Jitsu et arts
+      martiaux, Delphi, modélisme et figurines
+    scraped_at: 2026-01-30T17:36:18.061Z
+    error: null
+    name: Jean-Michel Doudoux
+  - handle: juliendubois
+    followers: 12.1K
+    description: Principal Manager, Java Developer Relations @Microsoft - Lead
+      developer of @jhipster
+    scraped_at: 2026-01-30T17:36:23.578Z
+    error: null
+    name: Julien Dubois
+  - handle: kevindubois
+    followers: 1,546
+    description: >-
+      Find me on BlueSky @kevindubois.com
+
+
+      Java Champion | CNCF DevEX Tag Lead | Author | Speaker |  Developer
+      Advocate @IBM
+    scraped_at: 2026-01-30T17:36:29.115Z
+    error: null
+    name: Kevin Dubois
+  - handle: hendrikEbbers
+    followers: 3,508
+    description: Helping you to write better Java code & APIs - Java Champion,
+      JavaOne Rockstar, JCP expert group member -  Star Wars, boardgames, Java
+      and hardrock
+    scraped_at: 2026-01-30T17:36:34.746Z
+    error: null
+    name: Hendrik Ebbers
+  - handle: BruceEckel
+    followers: 9,484
+    description: Author of Thinking in Java, Thinking in C++, Atomic Kotlin, On Java
+      8, Atomic Scala and others. Co-podcaster of
+      http://HappyPathProgramming.com
+    scraped_at: 2026-01-30T17:36:40.309Z
+    error: null
+    name: Bruce Eckel
+  - handle: bsideup
+    followers: 8,131
+    description: "Cloud builder. Java Champion. Prev: @testcontainers co-creator,
+      CEO/co-founder at @AtomicJarInc (acqd by @docker), StaffEng at
+      @Pivotal/@vmware, @zeroturnaround"
+    scraped_at: 2026-01-30T17:36:45.843Z
+    error: null
+    name: Sergei Egorov
+  - handle: myfear
+    followers: 29K
+    description: Something at @IBMResearch. Legal thinks you need to know that I'm
+      speaking for myself here. I believe you knew.
+    scraped_at: 2026-01-30T17:36:51.433Z
+    error: null
+    name: Markus Eisele
+  - handle: badrelhouari
+    followers: 2,354
+    description: Serial Techpreneur. DevoxxMA Chair. Founder & CIO @ xHub. Always
+      Developper, Surfer & Rider ! Java Champion & Father
+    scraped_at: 2026-01-30T17:36:57.032Z
+    error: null
+    name: Badr El Houari
+  - handle: relizarov
+    followers: 19.4K
+    description: Software infrastructure & libs, language design, sports
+      programming/ICPC, concurrency & algorithms, math & quantitative finance.
+      ex-project lead for @Kotlin
+    scraped_at: 2026-01-30T17:37:02.604Z
+    error: null
+    name: Roman Elizarov
+  - handle: hannotify
+    followers: 1,520
+    description: >-
+      Java Champion  Oracle ACE Pro  Java Developer by day  
+
+      Musician by night  A bit of both at conferences  @InfoSupportBV  @NLJUG
+      JUG leader 
+    scraped_at: 2026-01-30T17:37:08.207Z
+    error: null
+    name: Hanno Embregts
+  - handle: noctarius2k
+    followers: 5,294
+    description: >-
+      #Devrel @simplyblock_io, #Opensource, @Java_Champions, Ex Timescale,
+      Instana, Ubisoft, Hazelcast - Views are my own
+
+
+      Linktree: https://linktr.ee/noctarius2k
+    scraped_at: 2026-01-30T17:37:13.752Z
+    error: null
+    name: Christoph Engelbert
+  - handle: monacotoni
+    followers: 2,890
+    description: Here to share interesting Java and UI Development content. Author
+      and Trainer, Java Champion, JavaONE Rockstar Duke's Choice Winner,
+      @DukeScript Developer
+    scraped_at: 2026-01-30T17:37:19.373Z
+    error: null
+    name: Anton (Toni) Epple
+  - handle: BertErtman
+    followers: 1,702
+    description: Java & Cloud Postmodernist at Luminis. Serial conference organizer.
+      Recognized Java Champion and JavaOne Rock Star Speaker. Book Author. Made
+      in Holland.
+    scraped_at: 2026-01-30T17:37:24.973Z
+    error: null
+    name: Bert Ertman
+  - handle: clementplop
+    followers: 3,695
+    description: "Doing reactive stuff. Distinguished Engineer @Redhat. Java
+      Champion. #quarkus #vertx #smallrye. Rabbit shepherd. Opinions are mine
+      not of my employer."
+    scraped_at: 2026-01-30T17:37:30.514Z
+    error: null
+    name: Dr. Clement Escoffier
+  - handle: UnFroMage
+    followers: "817"
+    description: FroMage. Works on Quarkus, Vert.x, Ceylon for Red Hat, co-lead of
+      Riviera JUG, Riviera DEV and is generally French…
+    scraped_at: 2026-01-30T17:37:36.077Z
+    error: null
+    name: Stéphane Épardaud
+  - handle: yfain
+    followers: 4,607
+    description: |-
+      My Instagram: http://instagram.com/yfain
+      Мой youtube канал о текущих событиях: http://youtube.com/user/yfain
+      My blog:  http://yakovfain.com.
+    scraped_at: 2026-01-30T17:37:41.693Z
+    error: null
+    name: Yakov Fain
+  - handle: RichardFichtner
+    followers: 2,659
+    description: "@XDEVSoftware, Loves Java , @Java_Champions, Founder JUG
+      Oberpfalz, Co-organizer @jcon_conference, @IBMChampions, @oracleace,
+      Vaadin Champion, Dongolorian"
+    scraped_at: 2026-01-30T17:37:47.309Z
+    error: null
+    name: Richard Fichtner
+  - handle: omniprof
+    followers: 7,055
+    description: Get off X, now. Stop supporting the neo-Nazi and white supremicist
+      Elon Musk along with his buddy Trump.
+    scraped_at: 2026-01-30T17:37:52.883Z
+    error: null
+    name: Prof. Ken Fogel
+  - handle: axelfontaine
+    followers: 1,914
+    description: |-
+      Creator @sprinters_sh, @flywaydb (sold to @redgate), @CloudCaptainSH.
+      Java Champion, JavaOne RockStar
+    scraped_at: 2026-01-30T17:37:58.494Z
+    error: null
+    name: Axel Fontaine
+  - handle: mariofusco
+    followers: 49.2K
+    description: Java Champion ~ Open source advocate ~ Frequent speaker ~
+      @jugmilano coordinator ~ @QuarkusIO and @langchain4j committer at @IBM ~
+      Pragmatic dreamer ~ Europeist
+    scraped_at: 2026-01-30T17:38:04.111Z
+    error: null
+    name: Mario Fusco
+  - handle: 23derevo
+    followers: 3,688
+    description: Conference Director @ JUG Ru Group, Java Champion, AV Lead @ ICPC.
+      Engineering is an art of managing trade-offs. He/him.
+    scraped_at: 2026-01-30T17:38:09.716Z
+    error: null
+    name: Dr. Alexey Fyodorov
+  - handle: gafter
+    followers: 4,182
+    description: Interested in programming language evolution (C++, C#, Java,
+      Kotlin), and Bitcoin.
+    scraped_at: 2026-01-30T17:38:15.270Z
+    error: null
+    name: Dr. Neal Gafter
+  - handle: dgageot
+    followers: 6,839
+    description: |-
+      Chaotic French Speaker. Software Engineer at Docker.
+      See you here: https://bsky.app/profile/dgageot.bsky.social…
+    scraped_at: 2026-01-30T17:38:20.873Z
+    error: null
+    name: David Gageot
+  - handle: gAmUssA
+    followers: 7,774
+    description: " @confluentinc, Java Champion, Co-author @kafkainaction
+      @EnterpriseWebBk ex @thekonginc Stupidity is my own. Retweet !==
+      endorsement"
+    scraped_at: 2026-01-30T17:38:26.491Z
+    error: null
+    name: Viktor Gamov
+  - handle: trisha_gee
+    followers: 35.5K
+    description: >-
+      Engineer, author, keynote speaker, developer champion, catalyst. Head of
+      Developer Advocacy @ Gradle for Developer Productivity Engineering.
+
+      She/her.
+    scraped_at: 2026-01-30T17:38:32.087Z
+    error: null
+    name: Trisha Gee
+  - handle: jgenender
+    followers: "265"
+    description: Principal and founder of Savoir Technologies, Apache Member, Fire
+      Fighter, and husband and father to the best family anyone could ever have.
+    scraped_at: 2026-01-30T17:38:37.661Z
+    error: null
+    name: Jeff Genender
+  - handle: brunogh
+    followers: null
+    description: Co-founder & CTO RD Station @ResDigitais. Endeavor Entrepreneur.
+      Java Champion. MSc in CS. Dad2
+    scraped_at: 2026-01-30T17:38:43.292Z
+    error: null
+    name: Bruno Ghisi
+  - handle: javabird
+    followers: "725"
+    description: Proud father, JUG Sardegna founder, Java Champion, Free Libre Open
+      Source Software supporter. Still nothing but a lot of tweets and a badge.
+    scraped_at: 2026-01-30T17:38:48.911Z
+    error: null
+    name: Fabrizio Gianneschi
+  - handle: JonathanGiles
+    followers: 5,687
+    description: "Principal Java Architect for libraries @Microsoft and a
+      @Java_Champions. Previous: Consulting Member of Technical Staff on @Java
+      at Oracle/Sun Microsystems"
+    scraped_at: 2026-01-30T17:38:54.556Z
+    error: null
+    name: Jonathan Giles
+  - handle: BrianGoetz
+    followers: 67.2K
+    description: Java Language Architect at Oracle.   Author, Java Concurrency in
+      Practice (http://amzn.to/2nzZnkl).  Also, cats.
+    scraped_at: 2026-01-30T17:39:00.109Z
+    error: null
+    name: Brian Goetz
+  - handle: dgomezg
+    followers: 2,530
+    description: JavaChampion. @MadridJUG co-organizer. I love doing stuff with
+      other people, learning from others & sharing what I know.
+    scraped_at: 2026-01-30T17:39:05.667Z
+    error: null
+    name: David Gómez
+  - handle: agoncal
+    followers: 18.6K
+    description: "Principal Software Engineer @Microsoft @Azure @JavaAtMicrosoft
+      @devoxxfr @parisjug @Java_Champions @pluralsight #BookAuthor #Jazz #Tango
+      Us/We"
+    scraped_at: 2026-01-30T17:39:11.271Z
+    error: null
+    name: Antonio Goncalves
+  - handle: errcraft
+    followers: 31.5K
+    description: I'm no longer active on Twitter, or even paying attention.  I've
+      moved over to Mastodon @JamesGosling@universeodon.com
+    scraped_at: 2026-01-30T17:39:16.841Z
+    error: null
+    name: Dr. James Gosling
+  - handle: Jim__Gough
+    followers: 1,783
+    description: Distinguished Engineer, Java Champion, O’Reilly Author and
+      Technical Trainer. All views are my own.
+    scraped_at: 2026-01-30T17:39:22.452Z
+    error: null
+    name: Jim Gough
+  - handle: rodrigograciano
+    followers: 3,449
+    description: Father • Married to @ManuGraciano • @nyjavasig JUG leader •
+      @Java_Champions • Public speaker • https://graciano.dev •  • opinions are
+      my own
+    scraped_at: 2026-01-30T17:39:28.037Z
+    error: null
+    name: Rodrigo Graciano
+  - handle: vgrazi
+    followers: "570"
+    description: null
+    scraped_at: 2026-01-30T17:39:33.594Z
+    error: null
+    name: Victor Grazi
+  - handle: frankgreco
+    followers: 1,823
+    description: "AI/ML and Technology Strategist, Educator, NYJavaSIG Chair, Java
+      Champion, Musician, Writer, Obnoxious Foodie, and very bad
+      Fisherman.  #STEAMnotSTEM #Diversity"
+    scraped_at: 2026-01-30T17:39:39.138Z
+    error: null
+    name: Frank Greco
+  - handle: NeilGriffin95
+    followers: "599"
+    description: Java Champion | Software Architect, Liferay, Inc. | Liferay Faces
+      Team Lead | JSR 378 Spec Lead
+    scraped_at: 2026-01-30T17:39:44.694Z
+    error: null
+    name: Neil Griffin
+  - handle: ivar_grimstad
+    followers: 6,001
+    description: >-
+      Java Champion | Jakarta EE Developer Advocate | The guy with the Duke
+      tattoo | @JakartaEE @EclipseFdn
+
+
+      https://jakarta.ee/community/developer-advocate/…
+    scraped_at: 2026-01-30T17:39:50.244Z
+    error: null
+    name: Ivar Grimstad
+  - handle: SanneGrinovero
+    followers: 2,433
+    description: Hibernate specialist & Quarkus co-founder. Architect @ IBM
+      middleware / ex Red Hat. Java Champion. Maniacal tendencies to improve any
+      OSS project he likes.
+    scraped_at: 2026-01-30T17:39:55.856Z
+    error: null
+    name: Sanne Grinovero
+  - handle: loiane
+    followers: 45.5K
+    description: >-
+      Director of Engineering • @GoogleDevExpert @Angular • @MVPAward •
+      @OracleACE • @Java_Champions • Love to share what I learn • 
+
+      In my RunDisney  era
+    scraped_at: 2026-01-30T17:40:01.476Z
+    error: null
+    name: Loiane Groner
+  - handle: hansolo_
+    followers: 8,931
+    description: JUG Leader, Java Champion,  Java, coding in general, mountain
+      biking and photography...may the force be with you...
+      https://bsky.app/profile/hansolo.eu…
+    scraped_at: 2026-01-30T17:40:07.078Z
+    error: null
+    name: Gerrit Grunwald
+  - handle: mgrygles
+    followers: 4,511
+    description: EmergTech-Architect-Advocate |  | ex-#IBMer |@Java_Champions |@CJUG
+      Prez | @_ai_collective-Chicago && RegionalDir | Truth-seeker &
+      Live+Tech-4-Goodness
+    scraped_at: 2026-01-30T17:40:12.657Z
+    error: null
+    name: Mary Grygleski
+  - handle: MGrzejszczak
+    followers: 5,739
+    description: >-
+      Tweets about #DistributedTracing #Observability #Tests and #Java
+
+
+      Author of books, courses. Making @springframework #observability,
+      @springcloud @micrometerio
+    scraped_at: 2026-01-30T17:40:18.263Z
+    error: null
+    name: Marcin Grzejszczak
+  - handle: ags313
+    followers: 1,905
+    description: Small data and high latency software, on the JVM
+    scraped_at: 2026-01-30T17:40:23.873Z
+    error: null
+    name: Andrzej Grzesik
+  - handle: CGuntur
+    followers: 5,888
+    description: >-
+      Hoopy Frood | @Java_Champions /JCP EC Mem/ @NYJavaSIG & @GardenStateJUG
+      Leader | #Saganist | अहं ब्रह्मास्मि| #UsualSuspects  |
+
+
+      Motto: docendo discimus
+    scraped_at: 2026-01-30T17:40:29.497Z
+    error: null
+    name: Chandra Guntur
+  - handle: arungupta
+    followers: 45.4K
+    description: Runner, Lifter, Author, Father, @menkag hubby, @jetbrains, DevEx,
+      DevRel, Open Source, Java Champion, Docker Captain, Minecraft,
+      Devoxx4Kids, opinions own…
+    scraped_at: 2026-01-30T17:40:35.068Z
+    error: null
+    name: Arun Gupta
+  - handle: eMalaGupta
+    followers: 12.6K
+    description: "JavaChampion. Speaker. Books: http://goo.gl/QD6eeh. Co-lead
+      @WWCode_Delhi, @DelhiJUG. DevNexus Rockstar!"
+    scraped_at: 2026-01-30T17:40:40.666Z
+    error: null
+    name: Mala Gupta
+  - handle: romainguy
+    followers: 45.6K
+    description: "Previously: Engineering Director, Android Toolkit team at Google.
+      http://romainguy.dev on Bluesky"
+    scraped_at: 2026-01-30T17:40:46.212Z
+    error: null
+    name: Romain Guy
+  - handle: ahmed_hashim
+    followers: "947"
+    description: AI/ML Enthusiastic, Former Egyptian JUG leader and Java Champion.
+    scraped_at: 2026-01-30T17:40:51.772Z
+    error: null
+    name: Ahmed Hashim
+  - handle: mkheck
+    followers: 18.2K
+    description: Computer scientist+MBA, pilot, inglés+español. @Java_Champions,
+      presenter, author @springbootbook. Ex @Oracle, @Pivotal, @VMware,
+      @Microsoft
+    scraped_at: 2026-01-30T17:40:57.373Z
+    error: null
+    name: Mark Heckler
+  - handle: ensode
+    followers: 6,106
+    description: Java Champion, Apache NetBeans PMC Member, Technical Author,
+      Jakarta EE Consultant and Instructor.
+    scraped_at: 2026-01-30T17:41:02.974Z
+    error: null
+    name: David Heffelfinger
+  - handle: rajmahendrar
+    followers: 1,399
+    description: Agile Coach | Agile Consultant  | Change Agent | Scrum, Kanban,
+      SAFe, LESs | Mentor | Community Guy | Java Champion | Yoga | Bibliophile |
+      views are my own
+    scraped_at: 2026-01-30T17:41:08.526Z
+    error: null
+    name: Rajmahendra Hegde
+  - handle: DanHeidinga
+    followers: 1,555
+    description: Husband & father.  Java Champion.  JVM developer
+    scraped_at: 2026-01-30T17:41:14.123Z
+    error: null
+    name: Dan Heidinga
+  - handle: net0pyr
+    followers: 1,783
+    description: Java, Web, JavaFX developer. Interested in agile development and
+      public speaking. Love my family and cooking.
+    scraped_at: 2026-01-30T17:41:19.660Z
+    error: null
+    name: Michael Heinrichs
+  - handle: marcushellberg
+    followers: 3,531
+    description: |-
+      Applied AI Researcher, Speaker, DevRel expert.
+      Java Champion.
+      VP of AI Research @vaadin
+    scraped_at: 2026-01-30T17:41:25.223Z
+    error: null
+    name: Marcus Hellberg
+  - handle: CesarHgt
+    followers: 2,015
+    description: "Senior Software Engineer @Tomitribe. Java Champion, ASF Member,
+      AcePro & SuperFrog Alumni. OpenSource surfer eager to share and learn with
+      fellow developers "
+    scraped_at: 2026-01-30T17:41:30.824Z
+    error: null
+    name: César Hernández
+  - handle: javatotto
+    followers: 1,302
+    description: Geekfather★ Inventor ★ Community guy ★ Java Champion ★ Entrepreneur
+      ★  Developer ★ Software architect  ★ Opinionated IT strategist and trainer
+      ★
+    scraped_at: 2026-01-30T17:41:36.375Z
+    error: null
+    name: Thor Henning Hetland
+  - handle: deors314
+    followers: "970"
+    description: lecturer in recent runes, father of 2, husband, whistle player,
+      videogames, geek, all things software eng., java, cloud & devops
+      @accenture & @MalagaJUG co-org
+    scraped_at: 2026-01-30T17:41:41.933Z
+    error: null
+    name: Jorge Hidalgo
+  - handle: RickHigh
+    followers: 1,529
+    description: "Java Champion: Poet, Cold Stone Coder. Creator: Boon & QBit.
+      Streaming Microservices advocate. AWS, Kafka, Scala, Devops, Arch. Lifter.
+      Krav Maga enthusiast"
+    scraped_at: 2026-01-30T17:41:47.477Z
+    error: null
+    name: Rick Hightower
+  - handle: ghillert
+    followers: 1,737
+    description: "@Oracle, Java Champion, full-stack Spring + Angular aficionado &
+      2019 Kona IRONMAN Finisher, formerly @pivotal @vmware @springcentral
+      @atlantajug @devnexus"
+    scraped_at: 2026-01-30T17:41:53.016Z
+    error: null
+    name: Gunnar Hillert
+  - handle: hirt
+    followers: 2,515
+    description: Java nerd heavily into production time profiling and diagnostics.
+      Loves playing the piano. Pastafari.
+    scraped_at: 2026-01-30T17:41:58.586Z
+    error: null
+    name: Marcus Hirt
+  - handle: ronhitchens
+    followers: "506"
+    description: I live with three females
+    scraped_at: 2026-01-30T17:42:04.186Z
+    error: null
+    name: Ron Hitchens
+  - handle: springjuergen
+    followers: 5,835
+    description: Spring Framework project lead
+    scraped_at: 2026-01-30T17:42:09.735Z
+    error: null
+    name: Juergen Hoeller
+  - handle: marcandsweep
+    followers: "639"
+    description: "Java & Railroads Just in case: @marcandsweep@mastodon.social"
+    scraped_at: 2026-01-30T17:42:15.286Z
+    error: null
+    name: Marc Hoffmann
+  - handle: jacobhookom
+    followers: "332"
+    description: Previously @sitecore product-person, @four51ecommerce CPO,
+      @McKesson Fellow and @JavaChampion. Passionate for building cool stuff
+      with cool people.
+    scraped_at: 2026-01-30T17:42:20.861Z
+    error: null
+    name: Jacob Hookom
+  - handle: magoghm
+    followers: 1,173
+    description: null
+    scraped_at: 2026-01-30T17:42:26.442Z
+    error: null
+    name: Gerardo Horvilleur
+  - handle: huettermann
+    followers: 1,283
+    description: Digitalization . DevOps .
+    scraped_at: 2026-01-30T17:42:32.004Z
+    error: null
+    name: Dr. Michael Huettermann
+  - handle: BurkHufnagel
+    followers: "303"
+    description: Java Champion, Arctic Code Vault Contributor, TDD/BDD/UI/UX fan,
+      programmer, architect, speaker, author, DevNexus organizer, JUG leader,
+      SCJD, SCEA, LLAP
+    scraped_at: 2026-01-30T17:42:37.569Z
+    error: null
+    name: Burk Hufnagel
+  - handle: mesirii
+    followers: 5,494
+    description: Happy dad of 3 girls GraphAddict @neo4j JavaChampion Code
+      http://github.com/jexp Words http://medium.com/@mesirii Network
+      http://de.linkedin.com/in/jexpde
+    scraped_at: 2026-01-30T17:42:43.098Z
+    error: null
+    name: Michael Hunger
+  - handle: hunterhacker
+    followers: 1,112
+    description: I work for @AWSCloud & my opinions are my own. I prefer to "Post"
+      as hunterhacker, if ya know what I mean.
+    scraped_at: 2026-01-30T17:42:48.703Z
+    error: null
+    name: Jason Hunter
+  - handle: davsclaus
+    followers: 5,522
+    description: "@ApacheCamel | @Java_Champions | Engineer @IBM | Member @TheASF  |
+      Author Camel in Action"
+    scraped_at: 2026-01-30T17:42:54.279Z
+    error: null
+    name: Claus Ibsen
+  - handle: ederign
+    followers: 3,211
+    description: 80% grind, 20% skill .:. Java Champion, Senior Principal SE at Red
+      Hat, @InfoQ Dev Summit Chair, @QConLondon Co-Chair, and former @QConSp
+      Co-Chair
+    scraped_at: 2026-01-30T17:42:59.886Z
+    error: null
+    name: Eder Ignatowicz
+  - handle: oliverihns
+    followers: "230"
+    description: Co-CEO, Entrepreneur, Founder , Focus on digitalization of Business
+      Models and Business Processes
+    scraped_at: 2026-01-30T17:43:05.452Z
+    error: null
+    name: Oliver Ihns
+  - handle: prof_isidro
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:11.019Z
+    error: null
+    name: Francisco Isidro
+  - handle: jonatan_ivanov
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:16.654Z
+    error: null
+    name: Jonatan Ivanov
+  - handle: ivan_stefanov
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:22.268Z
+    error: null
+    name: Ivan St. Ivanov
+  - handle: gracejansen27
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:27.868Z
+    error: null
+    name: Grace Jansen
+  - handle: Stephan007
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:33.451Z
+    error: null
+    name: Stephan Janssen
+  - handle: jjenkov
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:39.067Z
+    error: null
+    name: Jakob Jenkov
+  - handle: emilyfhjiang
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:44.672Z
+    error: null
+    name: Emily Jiang
+  - handle: springrod
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:50.269Z
+    error: null
+    name: Dr. Rod Johnson
+  - handle: techgirl1908
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:43:55.837Z
+    error: null
+    name: Angie Jones
+  - handle: javajudd
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:44:01.417Z
+    error: null
+    name: Christopher Judd
+  - handle: javajuneau
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:44:06.991Z
+    error: null
+    name: Josh Juneau
+  - handle: matjazbj
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:44:12.582Z
+    error: null
+    name: Prof. Matjaz Juric
+  - handle: heinzkabutz
+    followers: 17.4K
+    description: "Author of mildly entertaining somewhat useful #Java Specialists’
+      Newsletter http://javaspecialists.eu. Email is heinz at javaspecialists
+      dot eu."
+    scraped_at: 2026-01-30T17:44:18.215Z
+    error: null
+    name: Dr. Heinz M. Kabutz
+  - handle: matkar
+    followers: 3,199
+    description: Jfokus founder, Java Champion, JUG leader, Software Vagabond,
+      Family father, Motorcyclist & Kiva supporter. Check out @jfokus
+    scraped_at: 2026-01-30T17:44:23.787Z
+    error: null
+    name: Mattias Karlsson
+  - handle: kohsukekawa
+    followers: 14.4K
+    description: Co-CEO of @launchableinc, Creator of @jenkinsci, Advisor of
+      @CloudBees. Loves start-ups, coding, photography, LEGO, cross-stitching,
+      and bridging US/JAPAN
+    scraped_at: 2026-01-30T17:44:29.356Z
+    error: null
+    name: Kohsuke Kawaguchi
+  - handle: rkennke
+    followers: 2,819
+    description: Java Champion, OpenJDK, Amazon Web Services, Finances, Fitness
+    scraped_at: 2026-01-30T17:44:34.977Z
+    error: null
+    name: Roman Kennke
+  - handle: 1ovthafew
+    followers: 4,799
+    description: Distinguished Engineer at IBM / Red Hat Middleware. Creator of
+      @Hibernate ORM, @CDIspec, and @CeylonLang. Working on @JakartaEE
+      Persistence, Query, and Data.
+    scraped_at: 2026-01-30T17:44:40.600Z
+    error: null
+    name: Gavin King
+  - handle: viktorklang
+    followers: 14.4K
+    description: "Architect, Java at Oracle.Views are my own. "
+    scraped_at: 2026-01-30T17:44:46.232Z
+    error: null
+    name: Viktor Klang
+  - handle: aslakknutsen
+    followers: 2,388
+    description: Maistra Dev Tools, Arquillian, Principal Software Engineer at Red
+      Hat, O'Reilly Author http://shop.oreilly.com/product/063692… JavaOne
+      RockStar, Java Cha
+    scraped_at: 2026-01-30T17:44:51.851Z
+    error: null
+    name: Aslak Knutsen
+  - handle: clarako
+    followers: "233"
+    description: null
+    scraped_at: 2026-01-30T17:44:57.437Z
+    error: null
+    name: Clara Ko
+  - handle: panoskonst
+    followers: "553"
+    description: null
+    scraped_at: 2026-01-30T17:45:03.055Z
+    error: null
+    name: Panos Konstantinidis
+  - handle: kenkousen
+    followers: 5,550
+    description: >-
+      Java Champion, NFJS speaker, and author of several books; latest is
+      Mockito Made Clear (Pragmatic Programmers).
+
+      See also http://foojay.social/@kenkousen
+    scraped_at: 2026-01-30T17:45:08.624Z
+    error: null
+    name: Dr. Kenneth Kousen
+  - handle: mittie
+    followers: 3,733
+    description: "@ProfDKoenig at @FHNW, Fellow at @karakun, Java Champion, JavaOne
+      Rock Star. OpenDolphin, Frege, Groovy, Grails contributor. Lead author of
+      Groovy in Action"
+    scraped_at: 2026-01-30T17:45:14.244Z
+    error: null
+    name: Prof. Dierk König
+  - handle: glaforge
+    followers: 15.9K
+    description: |2-
+       Developer Advocate @GoogleCloud
+       Focusing on GenAI 
+       @ApacheGroovy co-founder 
+       @java_champions
+       @lescastcodeurs podcast
+       @glaforge.dev
+    scraped_at: 2026-01-30T17:45:19.825Z
+    error: null
+    name: Guillaume Laforge
+  - handle: lagergren
+    followers: 3,815
+    description: Engineer. Author. Father. Java language team alumnus. Java
+      Champion. Likes compilers, static typing, handguns & literature.
+    scraped_at: 2026-01-30T17:45:25.406Z
+    error: null
+    name: Marcus Lagergren
+  - handle: MiraLak
+    followers: 2,406
+    description: "Senior developer || #Java champion || One of @duchessfr leaders ||
+      Running addict #WomenInTech #yesWeCode"
+    scraped_at: 2026-01-30T17:45:30.961Z
+    error: null
+    name: Amira Lakhal
+  - handle: AngelikaLanger
+    followers: 1,333
+    description: trainer / consultant / author / speaker; interested in Java topics
+      (concurrency, performance, new language features); author of Generics FAQs
+    scraped_at: 2026-01-30T17:45:36.551Z
+    error: null
+    name: Angelika Langer
+  - handle: jaceklaskowski
+    followers: 6,947
+    description: "Freelance Data(bricks) Engineer • #ApacheSpark #DeltaLake
+      #UnityCatalog #MLflow Ambassador #DSPy #Databricks • Java Champion •
+      @theASF • #DatabricksMVP"
+    scraped_at: 2026-01-30T17:45:42.116Z
+    error: null
+    name: Jacek Laskowski
+  - handle: PeterLawrey
+    followers: 8,289
+    description: >-
+      CEO of @Chronicle_SW (Software)
+
+
+      Java Champion, author of Vanilla Java, performance specialist, 13K answers
+      on StackOverflow
+    scraped_at: 2026-01-30T17:45:47.688Z
+    error: null
+    name: Peter Lawrey
+  - handle: douglea
+    followers: 1,317
+    description: CS Professor
+    scraped_at: 2026-01-30T17:45:53.329Z
+    error: null
+    name: Dr. Doug Lea
+  - handle: crazybob
+    followers: 18.3K
+    description: CPO of @MobileCoin (we're hiring!). Startup advisor and angel
+      investor. Former CTO of @Square. Created @CashApp. Helped create Android.
+    scraped_at: 2026-01-30T17:45:58.902Z
+    error: null
+    name: Bob Lee
+  - handle: jasondlee
+    followers: 1,663
+    description: Follower of Jesus. Husband. Father. Bassist. Martial Artist. Java
+      Champion. Software engineer @ IBM. @OKCJUG President. Opinions are mine,
+      but can be yours.
+    scraped_at: 2026-01-30T17:46:04.482Z
+    error: null
+    name: Jason Lee
+  - handle: evanchooly
+    followers: 2,890
+    description: Java Champion. Kotlin fanatic.  Bit twiddler.  New
+      Yorker.  Pronounces it jif. SSE at @Datadog. @evanchooly@mastodon.social
+    scraped_at: 2026-01-30T17:46:10.101Z
+    error: null
+    name: Justin Lee
+  - handle: trustin
+    followers: 3,803
+    description: the best is yet to come / the founder of @netty_project & @armeria_project
+    scraped_at: 2026-01-30T17:46:15.652Z
+    error: null
+    name: Trustin Lee
+  - handle: sanhong_li
+    followers: "342"
+    description: |-
+      Java Champion,
+      Director,  Runtime and Compiler@Alibaba,
+      Opinions are my own.
+    scraped_at: 2026-01-30T17:46:21.263Z
+    error: null
+    name: San-Hong Li
+  - handle: plinskey
+    followers: "285"
+    description: null
+    scraped_at: 2026-01-30T17:46:26.859Z
+    error: null
+    name: Patrick Linskey
+  - handle: starbuxman
+    followers: 84.4K
+    description: Spring Developer Advocate (@Java_Champions & @Kotlin
+      @GoogleDevExpert) @VMwareTanzu   https://YouTube.com/@coffeesoftware
+    scraped_at: 2026-01-30T17:46:32.415Z
+    error: null
+    name: Josh Long
+  - handle: melissajmckay
+    followers: 1,942
+    description: Mom. Software engineer. Author. Java Champion. Former Docker
+      Captain. Huge fan of UNconferences and always looking to learn new things!
+    scraped_at: 2026-01-30T17:46:37.987Z
+    error: null
+    name: Melissa McKay
+  - handle: acelopezco
+    followers: 1,481
+    description: Java Champion, Oracle Ground Breaker Ambassador, certified as OCI
+      Developer, AWS Developer, OCP Java 8, OCPWCD and Oracle ADF Implementation
+      Specialist.
+    scraped_at: 2026-01-30T17:46:43.527Z
+    error: null
+    name: Alexis Lopez
+  - handle: ilopmar
+    followers: 3,427
+    description: One of @Java_Champions. Previously Broadcom/VMware,
+      Micronaut/Grails committer. Geek, father, speaker, Linux-lover, Lord of
+      Sealand, @MadridJUG co-organizer
+    scraped_at: 2026-01-30T17:46:49.142Z
+    error: null
+    name: Iván López
+  - handle: geirmagnusson
+    followers: "478"
+    description: null
+    scraped_at: 2026-01-30T17:46:54.768Z
+    error: null
+    name: Geir Magnusson
+  - handle: Sander_Mak
+    followers: 3,868
+    description: "Doing tech at @picnic, Java Champion & author of
+      http://javamodularity.com book for @OReillyMedia. Also @Pluralsight
+      instructor: http://bit.ly/ps-sander"
+    scraped_at: 2026-01-30T17:47:00.434Z
+    error: null
+    name: Sander Mak
+  - handle: ktosopl
+    followers: 8,224
+    description: "“Life is Study!”; ktoso@mastodon.social; Concurrency & Distributed
+      Swift @  Previously: Reactive Streams (TCK), @akkateam, @geecon
+      @Java_Champions"
+    scraped_at: 2026-01-30T17:47:06.004Z
+    error: null
+    name: Konrad Malawski
+  - handle: smaldini
+    followers: 3,634
+    description: all things engineering at @Netflix - Previously VMware, Pivotal -
+      @ProjectReactor founder, @Springframework contributor - ex Londoner
+    scraped_at: 2026-01-30T17:47:11.625Z
+    error: null
+    name: Stephane Maldini
+  - handle: "%5Fgodin%5F"
+    followers: null
+    description: Software Gardener, JaCoCo Project Lead, @SonarSource Language Team
+      Technical Leader
+    scraped_at: 2026-01-30T17:47:17.196Z
+    error: null
+    name: Evgeny Mandrikov
+  - handle: manicode
+    followers: 17K
+    description: AI and AppSec Educator.  Secure coding system prompts.
+      https://manicode.com/ai/
+    scraped_at: 2026-01-30T17:47:22.737Z
+    error: null
+    name: Jim Manico
+  - handle: kito99
+    followers: 1,867
+    description: Principal Consultant at Virtua, focusing on enterprise
+      architecture, training, development, and mentoring. Java Champion and
+      Google Developer Expert in Web Dev.
+    scraped_at: 2026-01-30T17:47:28.292Z
+    error: null
+    name: Kito Mann
+  - handle: dervismn
+    followers: "698"
+    description: Leading the Norwegian JUG, Oslo branch @javaBin,  Java Champion,
+      speaker, developer and principal officer at NAV IT.
+    scraped_at: 2026-01-30T17:47:33.900Z
+    error: null
+    name: Dervis Mansuroglu
+  - handle: sjmaple
+    followers: 15.1K
+    description: Founding DevRel @tessl_io. Java Champion, @virtualJUG founder.
+      Previously VP DevRel @snyksec, ZeroTurnaround, @IBM, LJC co-leader.
+    scraped_at: 2026-01-30T17:47:39.535Z
+    error: null
+    name: Simon Maple
+  - handle: khmarbaise
+    followers: 2,679
+    description: Apache Maven Project PMC @ASFMavenProject, Apache Software
+      Foundation Member @TheASF, @Java_Champions, Java Developer,CI/CD
+      Fan,Freelancer
+    scraped_at: 2026-01-30T17:47:45.093Z
+    error: null
+    name: Karl Heinz Marbaise
+  - handle: joshmarinacci
+    followers: 3,169
+    description: Single dad. DevRel. Nerd uncle
+    scraped_at: 2026-01-30T17:47:50.717Z
+    error: null
+    name: Joshua Marinacci
+  - handle: floydmarinescu
+    followers: 4,797
+    description: "@InfoQ & @QCon co-founder, Founder of @UBI_Works, @CommonWealth_ca
+      - Into health, wealth (economics), knowledge of Self."
+    scraped_at: 2026-01-30T17:47:56.325Z
+    error: null
+    name: Floyd Marinescu
+  - handle: simas_ch
+    followers: 9,175
+    description: >-
+      Yes, I'm creating software with AI that runs in production!
+
+      Java Champion, Vaadin Champion, Oracle ACE Pro, Speaker, Programming
+      Architect, and Lecturer.
+    scraped_at: 2026-01-30T17:48:01.899Z
+    error: null
+    name: Simon Martinelli
+  - handle: vmassol
+    followers: 1,248
+    description: http://massol.net
+    scraped_at: 2026-01-30T17:48:07.522Z
+    error: null
+    name: Vincent Massol
+  - handle: normanmaurer
+    followers: 10.6K
+    description: "Distinguished Engineer @Apple , @netty_project Lead, #swiftnio,
+      @TheASF, Author #Netty in Action @manningbooks, Apache #Cassandra MVP,
+      @Java_Champions"
+    scraped_at: 2026-01-30T17:48:13.102Z
+    error: null
+    name: Norman Maurer
+  - handle: vincentmayers
+    followers: 2,419
+    description: "@Java_Champions, Tech Community Leader (@atlantajug @devnexus
+      @jconfdev @vueconfus @connect_js), Proud Father. All views are my own"
+    scraped_at: 2026-01-30T17:48:18.705Z
+    error: null
+    name: Vincent Mayers
+  - handle: caroljmcdonald
+    followers: "990"
+    description: Carol  Developed software applications in machine
+      learning,  banking, health insurance, and telecom. Traveled worldwide
+      speaking. @UTKnoxville alum
+    scraped_at: 2026-01-30T17:48:24.281Z
+    error: null
+    name: Carole McDonald
+  - handle: RMehmandarov
+    followers: null
+    description: Passionate computer scientist. One of @Java_Champions,
+      @GoogleDevExpert for Cloud, Docker Captain. Public speaker. Ex-leader of
+      JavaZone and Norw. JUG – javaBin
+    scraped_at: 2026-01-30T17:48:29.899Z
+    error: null
+    name: Rustam Mehmandarov
+  - handle: EdduMelendez
+    followers: 2,500
+    description: " Java Chavo, Software Engineer and Open Source Contributor.
+      Working on Testcontainers. Opinions are my own."
+    scraped_at: 2026-01-30T17:48:35.509Z
+    error: null
+    name: Eddú Meléndez Gonzales
+  - handle: OndroMih
+    followers: 2,141
+    description: Java enthusiast. Director at @OmniFishEE. @CZJUG lead.
+      @Java_Champions. @JakartaEE committer. All opinions my own.
+    scraped_at: 2026-01-30T17:48:41.110Z
+    error: null
+    name: Ondro Mihályi
+  - handle: vlad_mihalcea
+    followers: 90.8K
+    description: >-
+      @Java Champion, author of High-Performance Java Persistence and
+      @Hypersistence Optimizer. 
+
+
+      Blogging at https://vladmihalcea.com
+    scraped_at: 2026-01-30T17:48:46.707Z
+    error: null
+    name: Vlad Mihalcea
+  - handle: ammbra1508
+    followers: 4,089
+    description: Java Champion Alumni | Architect| Sr. Developer Advocate @Oracle  |
+      Speaker | Co-founder @BucharestSCC. Opinions are my own.
+      @ammbra1508@mastodon.social
+    scraped_at: 2026-01-30T17:48:52.327Z
+    error: null
+    name: Ana-Maria Mihalceanu
+  - handle: michaelminella
+    followers: 3,017
+    description: Husband, Father, Director at @Broadcom responsible for
+      @springcentral,  @Java_Champions, @OffHeap, Author, Photographer. Thoughts
+      are my own. (he/him)
+    scraped_at: 2026-01-30T17:48:57.946Z
+    error: null
+    name: Michael T. Minella
+  - handle: elderjava
+    followers: 7,911
+    description: Helping @java developers to build and deploy the best software in
+      the industry. @Java_Champions. Published author. Board member @soujava.
+    scraped_at: 2026-01-30T17:49:03.560Z
+    error: null
+    name: Elder Moraes
+  - handle: gunnarmorling
+    followers: 67.2K
+    description: "Technologist @Confluentinc · Ex-lead of Debezium · Spec lead of
+      Bean Validation 2.0 · Creator of JfrUnit, kcctl and MapStruct · Java
+      Champion · "
+    scraped_at: 2026-01-30T17:49:09.155Z
+    error: null
+    name: Gunnar Morling
+  - handle: mthmulders
+    followers: 1,401
+    description: "Architect, trainer & speaker @InfoSupportBV. Also @Java_Champions
+      and @oracleace. Other: food, music & photography. Views are my own;
+      interpretations are yours."
+    scraped_at: 2026-01-30T17:49:14.715Z
+    error: null
+    name: Maarten Mulders
+  - handle: bmuskalla
+    followers: 1,730
+    description: "now: @poolsideai  · speaker · @Java_champions · technical reviewer
+      · author @97_things java book former @github copilot @gradle @tasktop
+      @eclipsesource"
+    scraped_at: 2026-01-30T17:49:20.363Z
+    error: null
+    name: Benjamin Muskalla
+  - handle: mauricenaftalin
+    followers: 1,775
+    description: Programmer, teacher, learner, father, writer, cyclist... and kvetcher.
+    scraped_at: 2026-01-30T17:49:25.931Z
+    error: null
+    name: Maurice Naftalin
+  - handle: NikhilNanivade
+    followers: 3,415
+    description: |-
+      Project lead Eclipse Collections  (http://eclipse.org/collections)
+      Software Developer, Mechanical Engineer, Java Champion. 
+      All opinions stated by me are my own.
+    scraped_at: 2026-01-30T17:49:31.516Z
+    error: null
+    name: Nikhil Nanivadekar
+  - handle: fabianenardon
+    followers: 5,846
+    description: Data Scientist, Java Champion and impossible projects expert. CTO
+      at http://tailtarget.com
+    scraped_at: 2026-01-30T17:49:37.115Z
+    error: null
+    name: Dr. Fabiane Bizinella Nardon
+  - handle: RafaDelNero
+    followers: 15.5K
+    description: >2-
+       Mentoring #Java developers to work with cutting-edge technologies,
+      earning top salaries 
+       @Java_Champions | Speaker | Book Author 
+       ®@JavaChallengers
+    scraped_at: 2026-01-30T17:49:42.668Z
+    error: null
+    name: Rafael Del Nero
+  - handle: forked_franz
+    followers: 2,356
+    description: |-
+      while(1) fork()
+
+      Proud @Java_Champions
+    scraped_at: 2026-01-30T17:49:48.265Z
+    error: null
+    name: Francesco Nigro
+  - handle: javaclimber
+    followers: 1,282
+    description: Android, iOS, HTML5, Java, Spring
+    scraped_at: 2026-01-30T17:49:53.873Z
+    error: null
+    name: Kevin Nilson
+  - handle: eliasnogueira
+    followers: 5,744
+    description: Java Champion | Senior Principal Software Engineer | Speaker |
+      Writer | Oracle ACE | Java Magazine NL | OSS
+    scraped_at: 2026-01-30T17:49:59.418Z
+    error: null
+    name: Elias Nogueira
+  - handle: headius
+    followers: 14.3K
+    description: |-
+      JRuby guy, Java, Ruby, OSS business liaison.
+
+      Find me: @headius@mastodon.social or @headius.bsky.social
+
+      Sponsor me: https://github.com/sponsors/headius…
+    scraped_at: 2026-01-30T17:50:05.003Z
+    error: null
+    name: Charles Oliver Nutter
+  - handle: HarshadOak
+    followers: 1,065
+    description: tech, science, software, startups,  reform, rationalism...
+    scraped_at: 2026-01-30T17:50:10.600Z
+    error: null
+    name: Harshad Oak
+  - handle: rickardoberg
+    followers: "818"
+    description: null
+    scraped_at: 2026-01-30T17:50:16.189Z
+    error: null
+    name: Rickard Oberg
+  - handle: gaijinco
+    followers: 1,029
+    description: "Java Champion and Bogotá JUG leader. Collaborator on 97 Things
+      every Java Programmer should know. YouTube Channel:
+      https://youtube.com/@gaijinco"
+    scraped_at: 2026-01-30T17:50:21.779Z
+    error: null
+    name: Carlos Obregon
+  - handle: danieloh30
+    followers: 3,475
+    description: "@Java_Champions, @CNCFAmbassadors & TAG DevEx , Developer Advocate
+      , Technical Marketing, Keynote Speaker, Published Author @RedHat
+      @CloudNativeFdn @QuarkusIO"
+    scraped_at: 2026-01-30T17:50:27.350Z
+    error: null
+    name: Daniel Oh
+  - handle: tuxtor
+    followers: 3,719
+    description: Campeón Java @java_champions, @oracleace, Duke's choice award
+      winner. Tech guy @nabenik, Gentoo Linux and Java in ES, EN-US and PT-BR
+    scraped_at: 2026-01-30T17:50:32.893Z
+    error: null
+    name: Víctor Orozco
+  - handle: mp911de
+    followers: 3,425
+    description: |-
+      Musician, producer, Spring Data.
+
+      #Autist | #Neurodiversity 
+    scraped_at: 2026-01-30T17:50:38.435Z
+    error: null
+    name: Mark Paluch
+  - handle: AndreiPangin
+    followers: 4,847
+    description: "JVM enthusiast. Java Champion. Author of async-profiler. Principal
+      Engineer at AWS. Top #JVM answerer on Stack Overflow."
+    scraped_at: 2026-01-30T17:50:43.995Z
+    error: null
+    name: Andrei Pangin
+  - handle: baeldung
+    followers: 76.6K
+    description: Passionate about everything Java. Teaching Spring on
+      http://baeldung.com. Java Champion.
+    scraped_at: 2026-01-30T17:50:49.552Z
+    error: null
+    name: Eugene Paraschiv
+  - handle: nipafx
+    followers: 18.9K
+    description: "#Java enthusiast with a passion for learning and sharing, DevRel
+      at Oracle but views are my own; left for ::nipafx@mastodon.social &
+      ::http://nipafx.dev"
+    scraped_at: 2026-01-30T17:50:55.116Z
+    error: null
+    name: Nicolai Parlog
+  - handle: prpatel
+    followers: 4,717
+    description: |-
+      MY BLUESKY:
+
+      https://bsky.app/profile/prpatel.dev…
+
+      Lead Dev Rel at @azulsystems
+    scraped_at: 2026-01-30T17:51:00.640Z
+    error: null
+    name: Pratik Patel
+  - handle: bobpaulin
+    followers: "943"
+    description: Thinker-doer. @snowflake @cjug. @theasf Member @apachetika .  Java
+      Chp. Listen to me rant @offheap Dad x 4. Less sarcastic half
+      of  @beckypaulin
+    scraped_at: 2026-01-30T17:51:06.236Z
+    error: null
+    name: Bob Paulin
+  - handle: JosePaumard
+    followers: 12.5K
+    description: "#Java #DevRel @Oracle, bartender #JEPCafe and https://dev.java,
+      Java Champion Alumnus, JavaOne Rockstar. https://josepaumard.bsky.social"
+    scraped_at: 2026-01-30T17:51:11.842Z
+    error: null
+    name: Dr. José Paumard
+  - handle: kcpeppe
+    followers: 2,895
+    description: "Works @ Microsoft, Author of the original Java Performance Tuning
+      Workshop, co-founder #jcreteunconf. All tweets are my own. Mastodon:
+      kcpeppe@c.im"
+    scraped_at: 2026-01-30T17:51:17.389Z
+    error: null
+    name: Kirk Pepperdine
+  - handle: JPeredaDnr
+    followers: 2,423
+    description: PhD Structural Engineer, Java Champion, Oracle Dev Champion.
+      Love  coding Java & JavaFX, mobile apps, IoT.  Software Engineer at
+      http://gluonhq.com
+    scraped_at: 2026-01-30T17:51:22.942Z
+    error: null
+    name: Dr. Jose Pereda
+  - handle: jppetines
+    followers: "265"
+    description: Husband & Dad
+    scraped_at: 2026-01-30T17:51:28.477Z
+    error: null
+    name: John Paul "JP" Petines
+  - handle: SeanMiPhillips
+    followers: 1,833
+    description: |-
+      Applied Data Science. Data Visualization.
+      Johns Hopkins University Applied Physics Lab. 
+      JavaFX. Machine Learning
+      JavaOne Rock Star
+      Deep Space Trajectory Design
+    scraped_at: 2026-01-30T17:51:34.028Z
+    error: null
+    name: Sean M. Phillips
+  - handle: peter_pilgrim
+    followers: 3,840
+    description: >-
+      Principal Engineer Consultant| Java Champion | Keynote Speaker 
+
+      #BlueSky #TechLead #BlackTechTwitter #Protest #MicroAggression MINKY'S DAD
+      (2014-2022);
+    scraped_at: 2026-01-30T17:51:39.567Z
+    error: null
+    name: Peter Pilgrim
+  - handle: pivovarit
+    followers: 3,695
+    description: |-
+      @JavaChampions @WarszawaJUG @vavr_io @oracleace
+
+      Committee @JDD_Krakow  ex @hazelcast 
+
+      Dad jokes are my own.
+    scraped_at: 2026-01-30T17:51:45.153Z
+    error: null
+    name: Grzegorz Piwowarek
+  - handle: jponge
+    followers: 3,161
+    description: Software enthusiast | Scientist | @Java_Champions | Personal
+      account, not the views of my employers |
+      https://bsky.app/profile/julien.ponge.org…
+    scraped_at: 2026-01-30T17:51:50.700Z
+    error: null
+    name: Dr. Julien Ponge
+  - handle: spoole167
+    followers: 1,446
+    description: null
+    scraped_at: 2026-01-30T17:51:56.245Z
+    error: null
+    name: Steve Poole
+  - handle: piotrprz
+    followers: 2,388
+    description: >-
+      Java Champion. Testcontainers Champion. Software Gardener. DevAdv for
+      @Elastic. Edutainer. Speaker. Trainer. 
+
+      Views are mine, impressions are yours.
+    scraped_at: 2026-01-30T17:52:01.839Z
+    error: null
+    name: Piotr Przybyl
+  - handle: wpugh
+    followers: 1,544
+    description: "Professor, software developer, maker, mentor, fire eater.
+      Pronouns: he, him, his."
+    scraped_at: 2026-01-30T17:52:07.407Z
+    error: null
+    name: Prof. William Pugh
+  - handle: cquinn
+    followers: 4,428
+    description: Programmer Guy, Java Posse alumnus. I like Pony, Go, Java, C++,
+      Kotlin, Scala, Groovy, tools, Docker and clouds. He/him.
+    scraped_at: 2026-01-30T17:52:13.010Z
+    error: null
+    name: Carl Quinn
+  - handle: TheDonRaab
+    followers: 9,721
+    description: Java Champion. Creator of @EclipseCollect. Author of Eclipse
+      Collections Categorically (http://a.co/d/6KmhrNK).  TheDonRaab Opinions
+      are my own.
+    scraped_at: 2026-01-30T17:52:18.583Z
+    error: null
+    name: Donald Raab
+  - handle: bazlur_rahman
+    followers: 4,268
+    description: Java Champion  Empowering Developers through
+      Speaking  Writing  Mentoring  & Community Building  Published
+      Author  Editor @InfoQ, @foojayio
+    scraped_at: 2026-01-30T17:52:24.132Z
+    error: null
+    name: A N M *Bazlur* Rahman
+  - handle: mraible
+    followers: 21.2K
+    description: Software engineer with a passion for skiing, mountain biking, VWs,
+      and good . Driving a '66 21-window & a '90 Syncro. Made in Montana.
+    scraped_at: 2026-01-30T17:52:29.706Z
+    error: null
+    name: Matt Raible
+  - handle: mpredli
+    followers: 2,086
+    description: Java Champion | Lead Java News Editor at @infoq | Director at
+      @gardenstatejug | Retired from ExxonMobil | Married to my beautiful bride,
+      @RedlichRowena
+    scraped_at: 2026-01-30T17:52:35.246Z
+    error: null
+    name: Michael P. Redlich
+  - handle: JMHReif
+    followers: 2,080
+    description: Neo4j Developer Advocate helping Java developers use technology and
+      data more effectively. Continuous learner, tech blogger, conference
+      speaker.
+    scraped_at: 2026-01-30T17:52:40.827Z
+    error: null
+    name: Jennifer Reif
+  - handle: VictorRentea
+    followers: 8,906
+    description: |-
+      Trainer and Consultant
+      http://victorrentea.ro
+      Training: http://victorrentea.ro/catalog
+      http://youtube.com/vrentea
+      https://victorrentea.ro/community
+    scraped_at: 2026-01-30T17:52:46.434Z
+    error: null
+    name: Dr. Victor Rentea
+  - handle: crichardson
+    followers: 16.2K
+    description: "Learn-Build-Assess: http://eventuate.io, transactional
+      microservices. http://microservices.io patterns. Author of Microservices
+      Patterns. Frameworks. Consulting"
+    scraped_at: 2026-01-30T17:52:52.009Z
+    error: null
+    name: Chris Richardson
+  - handle: mnriem
+    followers: 1,398
+    description: A software experimenter who loves to try out new technologies. At
+      Microsoft engaging Customers. Opinions are my own!
+    scraped_at: 2026-01-30T17:52:57.539Z
+    error: null
+    name: Manfred Riem
+  - handle: speakjava
+    followers: 14.8K
+    description: Deputy CTO. Java Champion, member Java SE Expert Group, JCP EC,
+      OpenJDK Vulnerability Group and Adoptium SC. AMA about Java and JVM.
+    scraped_at: 2026-01-30T17:53:03.300Z
+    error: null
+    name: Simon Ritter
+  - handle: SvenNB
+    followers: 1,868
+    description: |-
+      Java Champion,
+      JUG Leader JUG Bodensee,
+      Apache NetBeans PMC, OpenJFX author,
+      Systemengineer @ Airbus Defence and Space
+    scraped_at: 2026-01-30T17:53:08.874Z
+    error: null
+    name: Sven Reimers
+  - handle: cppwfs
+    followers: "721"
+    description: >-
+      One of the folks that organize AJUG and DevNexus.
+
+      Contributor and Committer to Spring Cloud Data Flow and Spring Task and
+      Spring Batch
+    scraped_at: 2026-01-30T17:53:14.418Z
+    error: null
+    name: Glenn Renfro
+  - handle: royvanrijn
+    followers: 5,038
+    description: "Director of @OpenValue Rotterdam, is a @Java_Champions, founder of
+      @RotterdamJUG, public speaking: Java, AI, math, algorithms  (also
+      @royvanrijn.com bs)"
+    scraped_at: 2026-01-30T17:53:20.019Z
+    error: null
+    name: Roy van Rijn
+  - handle: graemerocher
+    followers: 11K
+    description: Creator of @grailsframework and @micronautfw, Architect at
+      @Oraclelabs Opinions are my own.
+    scraped_at: 2026-01-30T17:53:25.614Z
+    error: null
+    name: Graeme Rocher
+  - handle: ixchelruiz
+    followers: 3,662
+    description: Assiduous traveler, Software Developer, Java Champion, CDF
+      Ambassador, Open Source advocate, public speaker and mentor.
+    scraped_at: 2026-01-30T17:53:31.169Z
+    error: null
+    name: Ix-chel Ruiz
+  - handle: antoine_sd
+    followers: 2,887
+    description: Java Champion, I work at @Sciam_fr. Former Jakarta EE CDI spec
+      lead. I moved on BlueSky @antoine.sabot-durand.net. why are you still
+      here?
+    scraped_at: 2026-01-30T17:53:36.744Z
+    error: null
+    name: Antoine Sabot-Durand
+  - handle: jbaruch
+    followers: 13.5K
+    description: "DevRel Team and context engineering management at @tessl_io
+      Co-author of #LiquidSoftware and #DevOps Tools for #Java Developers. Java
+      Champion. Legacy verified."
+    scraped_at: 2026-01-30T17:53:42.306Z
+    error: null
+    name: Baruch Sadogursky
+  - handle: kanedafromparis
+    followers: "693"
+    description: |-
+      #architect, #java, #devops & #kubernetes enthusiast
+      @ParisJUG
+    scraped_at: 2026-01-30T17:53:47.840Z
+    error: null
+    name: Charles Sabourdin
+  - handle: jyukutyo
+    followers: 2,308
+    description: JVM Sustaining Engineer at Oracle Japan / OpenJDK Committer / Want
+      to be a JVM / Java Champion Alumnus / Father of 3 sons / Views are solely
+      my own
+    scraped_at: 2026-01-30T17:53:53.393Z
+    error: null
+    name: Koichi Sakata
+  - handle: skrb
+    followers: 5,193
+    description: Javaやっている人です。
+    scraped_at: 2026-01-30T17:53:58.937Z
+    error: null
+    name: Yuuichi Sakuraba
+  - handle: salaboy
+    followers: 4,915
+    description: Ecosystem & Software Engineer / Java Champion @salaboy.com
+      @diagridio @daprdev / Author of https://salaboy.com/books
+    scraped_at: 2026-01-30T17:54:04.516Z
+    error: null
+    name: Mauricio Salatino
+  - handle: betoSalazar
+    followers: 1,296
+    description: Speaker, @Java_Champions, JUG Leader, @Auth0Ambassador & JCP.
+      Co-author:"Software Architecture with Spring 5".Founder @advancelatam
+      @ecuadorjug
+    scraped_at: 2026-01-30T17:54:10.065Z
+    error: null
+    name: Alberto Salazar
+  - handle: cowtowncoder
+    followers: 1,971
+    description: Eco-liberal EU-expat (now in US PNW). Coder (Java), OSS author
+      (Jackson, Woodstox, ClassMate, java-uuid-generator), collaborator, mentor.
+      Gainfully employed.
+    scraped_at: 2026-01-30T17:54:15.667Z
+    error: null
+    name: Tatu Saloranta
+  - handle: bsbodden
+    followers: 1,205
+    description: |
+      Principal Applied AI Engineer at Redis. 
+      @Java_Champions 
+      Data Science @Harvard
+    scraped_at: 2026-01-30T17:54:21.222Z
+    error: null
+    name: Brian Sam-Bodden
+  - handle: otaviojava
+    followers: 9,685
+    description: Empowering software engineers to be more productive and effective
+      to reach the ultimate stage of sophistication. Java, NoSQL, Software
+      Design, & Architecture.
+    scraped_at: 2026-01-30T17:54:26.779Z
+    error: null
+    name: Otávio Gonçalves de Santana
+  - handle: mr__m
+    followers: 1,294
+    description: null
+    scraped_at: 2026-01-30T17:54:32.323Z
+    error: null
+    name: Michael Nascimento Santos
+  - handle: theNeomatrix369
+    followers: 2,450
+    description: "4X @Kaggle Expert @Java champion, polyglot dev, craftsperson,
+      #performance, AI, ML, DL, NLP, @graalvm @truffle, nlp_profiler, Dev.
+      communities, speaker, blogger"
+    scraped_at: 2026-01-30T17:54:37.858Z
+    error: null
+    name: Mani Sarkar
+  - handle: deepu105
+    followers: 4,653
+    description: |-
+      @deepu105@bsky.social
+
+      @jhipster co-chair.
+      Developer  @okta.
+      Polyglot dev/Speaker/Author.
+      @Java_Champions.
+      Java, Rust, JS, DevOps.
+      ADHD.
+    scraped_at: 2026-01-30T17:54:43.450Z
+    error: null
+    name: Deepu K Sasidharan
+  - handle: tomsontom
+    followers: 1,136
+    description: JavaChampion, Eclipser, JavaFXer, e(fx)clipser and CTO
+      http://BestSolution.at
+    scraped_at: 2026-01-30T17:54:49.047Z
+    error: null
+    name: Tom Schindl
+  - handle: jon_k_schneider
+    followers: 2,235
+    description: >-
+      Co-founder of @moderneinc. Java Champion. Author "SRE with Java
+      Microservices". Former Spring Team/@Netflix/US Army. Founder 
+
+      @openrewrite and @micrometerio.
+    scraped_at: 2026-01-30T17:54:54.646Z
+    error: null
+    name: Jonathan Schneider
+  - handle: rfscholte
+    followers: 1,858
+    description: Founder and CEO of @Sourcegrounds, @Java_Champions, former chairman
+      of @ASFMavenProject, member expertgroup JSR376, projectlead QDox, member
+      Mojohaus
+    scraped_at: 2026-01-30T17:55:00.188Z
+    error: null
+    name: Robert Scholte
+  - handle: OmniFaces
+    followers: 1,900
+    description: |-
+      To make Faces life easier
+      (all views/opinions are our own)
+    scraped_at: 2026-01-30T17:55:05.751Z
+    error: null
+    name: Bauke Scholtz
+  - handle: shipilev
+    followers: 27.7K
+    description: "In love-hate relationship with machines. Doing weird stuff, so you
+      don't have to. Personal account, expect no perfection. Currently:
+      everything OpenJDK at AWS."
+    scraped_at: 2026-01-30T17:55:11.300Z
+    error: null
+    name: Aleksey Shipilev
+  - handle: shelajev
+    followers: 7,284
+    description: Testcontainers at Docker. Developer, author, speaker. Java Champion
+      http://youtube.com/@shelajev views are my own
+    scraped_at: 2026-01-30T17:55:16.880Z
+    error: null
+    name: Oleg Šelajev
+  - handle: ebullientworks
+    followers: 1,717
+    description: Coder. Mom. Geek. Red Hatter. @Java_Champions. @commonhaus_fdn.
+      These tweets are my own. (@ebullient@hachyderm.io,
+      @ebullientworks.bsky.social)
+    scraped_at: 2026-01-30T17:55:22.473Z
+    error: null
+    name: Erin Schnabel
+  - handle: bjschrijver
+    followers: 4,058
+    description: CTO @OpenValue, JUG leader @NLJUG. J-Fall/Spring organizer,
+      @Java_champions, @iSAQB, JavaOne Rockstar, Duke’s choice award winner,
+      Java/architecture/CD/DevOps.
+    scraped_at: 2026-01-30T17:55:28.001Z
+    error: null
+    name: Bert Jan Schrijver
+  - handle: ntschutta
+    followers: 4,398
+    description: Java Champion. Speaker. Author. Architecture Monkey. Storyteller.
+    scraped_at: 2026-01-30T17:55:33.560Z
+    error: null
+    name: Nate Schutta
+  - handle: vsenger
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:55:39.166Z
+    error: null
+    name: Vinicius Senger
+  - handle: yara_tdc
+    followers: 7,519
+    description: CEO The Developer's Conference @thedevconf Founder ARENA Eventos
+      Digitais (Ela/She/Her)
+    scraped_at: 2026-01-30T17:55:44.757Z
+    error: null
+    name: Yara Senger
+  - handle: zsevarac
+    followers: 1,068
+    description: Deep Learning, AI, Software Engineering and Java. Java Champion,
+      University Professor, Duke's Choice Award Winner and Apache Net Beans
+      Contributor
+    scraped_at: 2026-01-30T17:55:50.297Z
+    error: null
+    name: Dr. Zoran Sevarac
+  - handle: sippsack
+    followers: 1,010
+    description: Falk Sippach,former @oio_braintime, now @embarced, and also
+      @JUG_DA, @CyberLandConf, @Java_Champions, German @Java Community, @iSAQB,
+      @SpeaKonf, @devsonthestage
+    scraped_at: 2026-01-30T17:55:55.894Z
+    error: null
+    name: Falk Sippach
+  - handle: yakov_sirotkin
+    followers: "557"
+    description: Complexity Fighter
+    scraped_at: 2026-01-30T17:56:01.493Z
+    error: null
+    name: Yakov Sirotkin
+  - handle: brjavaman
+    followers: 17.3K
+    description: >-
+      Since 1995, helping software developers improve their careers and work on
+      cool projects with great people!
+
+      @Java Evangelist
+
+      @JCP_ORG Executive
+
+      @SouJava Leader
+    scraped_at: 2026-01-30T17:56:07.080Z
+    error: null
+    name: Bruno Souza
+  - handle: alexsotob
+    followers: 5,556
+    description: Father. Java Champion. Speaker, Teacher, Radio Colab. Coauthor of
+      multiple O’Reilly and Manning books.
+    scraped_at: 2026-01-30T17:56:12.614Z
+    error: null
+    name: Alex Soto
+  - handle: laurspilca
+    followers: 6,587
+    description: |-
+      A #java guy /Pacifist  / A supporter of educational causes 
+       http://youtube.com/@laurspilca
+       https://buymeacoffee.com/laurspilca
+    scraped_at: 2026-01-30T17:56:18.139Z
+    error: null
+    name: Laurentiu Spilca
+  - handle: KateStanley91
+    followers: 1,728
+    description: Software engineer working on Red Hat products for Apache Kafka at
+      IBM, Strimzi maintainer, and with too many hobbies to count! My views are
+      my own.
+    scraped_at: 2026-01-30T17:56:23.711Z
+    error: null
+    name: Kate Stanley
+  - handle: jstrachan
+    followers: 7,632
+    description: working on future Apple technology in Special Projects. Previously
+      co-created Jenkins X, created Apache Groovy & Apache Camel
+    scraped_at: 2026-01-30T17:56:29.252Z
+    error: null
+    name: James Strachan
+  - handle: struberg
+    followers: null
+    description: ASF Member http://s.apache.org/strub , Java Champion,JCP&Jakarta EG
+      Member, MicroProfiler, 10k OSS commits, Bezirksrat @GrueneFavoriten,
+      struberg@mastodon.green
+    scraped_at: 2026-01-30T17:56:34.867Z
+    error: null
+    name: Mark Struberg
+  - handle: domix
+    followers: 4,781
+    description: Utopian code typer. Proud member of @java_champions. Chilango    I
+      know nothing Find me also https://bsky.app/profile/domix.codes…
+    scraped_at: 2026-01-30T17:56:40.585Z
+    error: null
+    name: Domingo Suarez
+  - handle: venkat_s
+    followers: 66.5K
+    description: Programmer, author, speaker, founder Agile Developer, Inc.,
+      co-founder of @dev2next Conference, professor @CSatUH
+    scraped_at: 2026-01-30T17:56:46.179Z
+    error: null
+    name: Dr. Venkat Subramaniam
+  - handle: burrsutter
+    followers: 8,030
+    description: "CodeCaster, Java Champion, #Kubernetes Trainer, Live-Demo Trapeze
+      Artist, true believer in open source & community"
+    scraped_at: 2026-01-30T17:56:51.767Z
+    error: null
+    name: Burr Sutter
+  - handle: siruslan
+    followers: 1,189
+    description: Transforming industries with interactive AI Avatars & holographic
+      experiences | Pioneering the future of real-time digital engagement
+    scraped_at: 2026-01-30T17:56:57.324Z
+    error: null
+    name: Ruslan Synytsky
+  - handle: _tamanm
+    followers: 3,715
+    description: Chief Solutions Architect, CEO @SiriusXI, a @Java_Champions,
+      @JCP_ORG member, Consultant, Trainer, Speaker & Author (  @Java)
+    scraped_at: 2026-01-30T17:57:02.866Z
+    error: null
+    name: Mohamed Taman
+  - handle: cero_t
+    followers: 10.8K
+    description: Java Champion / Java本格入門 / Everforth CTO / Acroquest Technology /
+      技術顧問(個人事業) / 中受2027 / FEXL Tokyo / We are BABYMETAL
+    scraped_at: 2026-01-30T17:57:08.419Z
+    error: null
+    name: Shin Tanimoto
+  - handle: redrapids
+    followers: 6,202
+    description: |-
+      Founder/trainer for Elixir at https://grox.io.  
+
+      Auth: 7 Langs in 7 Wks. and Programming Phoenix LiveView.
+
+      Gold looper from 'Nooga, author of Currently Away.
+    scraped_at: 2026-01-30T17:57:13.970Z
+    error: null
+    name: Bruce Tate
+  - handle: reginatb38
+    followers: "938"
+    description: Member of Duchess, Java Champion and working for Trailblazers
+    scraped_at: 2026-01-30T17:57:19.574Z
+    error: null
+    name: Régina ten Bruggencate
+  - handle: giltene
+    followers: 5,749
+    description: I spend time in front of computer screens, and some behind them
+    scraped_at: 2026-01-30T17:57:25.164Z
+    error: null
+    name: Gil Tene
+  - handle: yoshioterada
+    followers: 8,386
+    description: Sr. Cloud Advocate  at Microsoft Developer Relations & Java
+      Champion なお、つぶやきは私個人の見解であり所属する会社の公式な見解ではありません。
+    scraped_at: 2026-01-30T17:57:30.770Z
+    error: null
+    name: Yoshio Terada
+  - handle: fthamura
+    followers: 1,081
+    description: Java Guy from Java Island
+    scraped_at: 2026-01-30T17:57:36.385Z
+    error: null
+    name: Frans Thamura
+  - handle: alextheedom
+    followers: 2,644
+    description: "Principal Technical Instructor @MuleSoft, Java champion, author,
+      conference/meetup speaker and blogger. #Mule4 #DataWeave #Java2Mule"
+    scraped_at: 2026-01-30T17:57:41.988Z
+    error: null
+    name: Alex Theedom
+  - handle: mjpt777
+    followers: 14.5K
+    description: Pasty faced performance gangster
+    scraped_at: 2026-01-30T17:57:47.541Z
+    error: null
+    name: Martin Thompson
+  - handle: drkrab
+    followers: 1,968
+    description: |-
+      Philanthropist, hacker, organic farmer, lover of camp fires.
+      @drkrab@mastodon.social
+    scraped_at: 2026-01-30T17:57:53.135Z
+    error: null
+    name: Dr. Kresten Krab Thorup
+  - handle: arjan_tijms
+    followers: "955"
+    description: Director @OmniFishEE, Jakarta EE enthousiast, lead/committer of a
+      variety of Jakarta EE projects, Java Champion, @OmniFaces co-founder.
+    scraped_at: 2026-01-30T17:57:58.739Z
+    error: null
+    name: Arjan Tijms
+  - handle: robilad
+    followers: null
+    description: "Although I work at Oracle Global Services Germany: The views
+      expressed on this [blog; Web site] are my own and do not necessarily
+      reflect the views of Oracle."
+    scraped_at: 2026-01-30T17:58:04.344Z
+    error: null
+    name: Dalibor Topic
+  - handle: neugens
+    followers: "714"
+    description: "Manager of the OpenJDK team @RedHat and OpenJDK contributor, Java
+      Champion and musician - Views are my own - follow me here:
+      http://mastodon.social/@MarioTorre"
+    scraped_at: 2026-01-30T17:58:09.944Z
+    error: null
+    name: Mario Torre
+  - handle: henri_tremblay
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:15.509Z
+    error: null
+    name: Henri Tremblay
+  - handle: saturnism
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:21.069Z
+    error: null
+    name: Ray Tsang
+  - handle: CatalinTudose5
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:26.631Z
+    error: null
+    name: Dr. Cǎtǎlin Tudose
+  - handle: ktukker
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:32.222Z
+    error: null
+    name: Klaasjan Tukker
+  - handle: raoulUK
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:37.825Z
+    error: null
+    name: Dr. Raoul-Gabriel Urma
+  - handle: ustarahman
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:43.423Z
+    error: null
+    name: Rahman Usta
+  - handle: tagir_valeev
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:49.034Z
+    error: null
+    name: Tagir Valeev
+  - handle: DuchessFounder
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:58:54.635Z
+    error: null
+    name: Linda van der Pal
+  - handle: vanriper
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:59:00.239Z
+    error: null
+    name: Michael Van Riper
+  - handle: edivargas
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:59:05.833Z
+    error: null
+    name: Jorge Vargas
+  - handle: therealdanvega
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:59:11.392Z
+    error: null
+    name: Dan Vega
+  - handle: bvenners
+    followers: null
+    description: null
+    scraped_at: 2026-01-30T17:59:16.966Z
+    error: null
+    name: Bill Venners
+  - handle: karianna
+    followers: 11.4K
+    description: Group Mgr - @JavaAtMicrosoft, ex-CEO jClarity (acq), @ljcjug,
+      @jcp_org, @adoptium, @java_champion, @diabolicaldev,
+      martijnverburg@mastodon.social
+    scraped_at: 2026-01-30T17:59:22.539Z
+    error: null
+    name: Martijn Verburg
+  - handle: BrianVerm
+    followers: 6,773
+    description: Java Champion | Staff Dev at @Snyksec | JUG leader @NLJug &
+      @virtualJug | Java | Security | Dutch Air Reserve | Taekwondo Master |
+      Views are my own
+    scraped_at: 2026-01-30T17:59:28.120Z
+    error: null
+    name: Brian Vermeer
+  - handle: julienviet
+    followers: 2,112
+    description: null
+    scraped_at: 2026-01-30T17:59:33.723Z
+    error: null
+    name: Julien Viet
+  - handle: vilojona
+    followers: 3,998
+    description: "Senior Staff Developer Advocate  #Java @sonarsource |
+      @Java_Champions | @OracleACE #IBMContributor | @BarcelonaJUG |@AI4Devs
+      @Dev_Bcn cofound | Ex @RedHat"
+    scraped_at: 2026-01-30T17:59:39.298Z
+    error: null
+    name: Jonathan Vila
+  - handle: vitalethomas
+    followers: 3,874
+    description: INACTIVE ACCOUNT - Follow me on
+      Bluesky  https://bsky.app/profile/thomasvitale.com…
+    scraped_at: 2026-01-30T17:59:44.848Z
+    error: null
+    name: Thomas Vitale
+  - handle: michaelvitz
+    followers: "753"
+    description: Senior Consultant @INNOQ, @Java_Champions, conference speaker,
+      author, he/him, @michaelvitz@innoq.social
+    scraped_at: 2026-01-30T17:59:50.447Z
+    error: null
+    name: Michael Vitz
+  - handle: vogella
+    followers: 18.2K
+    description: Java Champion, open source developer Eclipse IDE project lead and
+      boardgame and pen and paper fan.
+    scraped_at: 2026-01-30T17:59:55.996Z
+    error: null
+    name: Lars Vogel
+  - handle: johanvos
+    followers: 7,425
+    description: >-
+      Java Champion, Gluon and LodgON.
+
+      co-lead OpenJFX, lead OpenJDK-Mobile . Java for science, Quantum
+      Computing, AI. PhD
+
+      http://mastodon.social/@johanvos
+    scraped_at: 2026-01-30T18:00:01.553Z
+    error: null
+    name: Dr. Johan Vos
+  - handle: nitsanw
+    followers: 3,083
+    description: What I post here should not even be seriously considered as my
+      views, let alone anybody elses.
+    scraped_at: 2026-01-30T18:00:07.085Z
+    error: null
+    name: Nitsan Wakart
+  - handle: dickwall
+    followers: 5,986
+    description: Software Developer and Scalawag
+    scraped_at: 2026-01-30T18:00:12.638Z
+    error: null
+    name: Dick Wall
+  - handle: habuma
+    followers: 4,828
+    description: Java Champion/Alexa Champion/Author of “Spring AI in Action”,
+      “Spring in Action” & “Build Talking Apps for Alexa”/Disney Parks
+      Fanatic/tabletop games player
+    scraped_at: 2026-01-30T18:00:18.226Z
+    error: null
+    name: Craig Walls
+  - handle: RichardWarburto
+    followers: 7,289
+    description: Cofounder of @OpsianApp, Maintainer of Artio (High Performance Open
+      Source FIX engine), Software Developer, Book Author, PhD, Londoner
+    scraped_at: 2026-01-30T18:00:23.843Z
+    error: null
+    name: Dr. Richard Warburton
+  - handle: JamesWard
+    followers: 17.9K
+    description: "My book: https://EffectOrientedProgramming.com | My podcast:
+      @HappyPathProg | Working on Agentic Architectures at @AWSCloud | My
+      opinions are mine"
+    scraped_at: 2026-01-30T18:00:29.438Z
+    error: null
+    name: James Ward
+  - handle: JavaFXpert
+    followers: 16.9K
+    description: James Weaver - IBM Quantum Developer Advocate, author and speaker.
+      Views are from my superpositional cats.
+    scraped_at: 2026-01-30T18:00:35.139Z
+    error: null
+    name: Jim Weaver
+  - handle: CaptainWebber
+    followers: "202"
+    description: Go To @sdjug for my Java Profile
+    scraped_at: 2026-01-30T18:00:40.680Z
+    error: null
+    name: Paul Webber
+  - handle: yonlabs
+    followers: 1,692
+    description: Founder at Yon Labs, consultant, Java Champion, Oracle ACE,
+      Java/C++/Go, SecDevOps, SRE, Top 10 Women in Tech in Poland
+    scraped_at: 2026-01-30T18:00:46.218Z
+    error: null
+    name: Patrycja Wegrzynowicz
+  - handle: miragemiko
+    followers: 1,335
+    description: "@Java_Champions, @oracleace, Software Engineer, OpenJDK, @Robo4J,
+      Published Author, father, husband, data geek and dreamer"
+    scraped_at: 2026-01-30T18:00:51.812Z
+    error: null
+    name: Miro Wengner
+  - handle: GeertjanW
+    followers: 8,333
+    description: Senior Director of Open Source Projects @AzulSystems @foojayio
+      (http://foojay.io), Amsterdam Java User Group, @TheASF @NetBeans PMC
+      Chair, and @Java_Champions.
+    scraped_at: 2026-01-30T18:00:57.444Z
+    error: null
+    name: Geertjan Wielenga
+  - handle: JoeWinchester
+    followers: "401"
+    description: "IBMer (all views my own) working on #zowe.org. Father, Husband,
+      Sailor, Coffee snob, Classical music on my ipod, Astronomy amateur, and 57
+      year old nerd"
+    scraped_at: 2026-01-30T18:01:03.073Z
+    error: null
+    name: Joe Winchester
+  - handle: russel_winder
+    followers: 1,743
+    description: Doing what I want.
+    scraped_at: 2026-01-30T18:01:08.663Z
+    error: null
+    name: Russel Winder
+  - handle: ewolff
+    followers: 9,314
+    description: |-
+      This account is retired.
+      Fuck Elon.
+      Fuck fascism.
+      http://mastodon.social/@ewolff
+      https://bsky.app/profile/ewolff.com…
+      https://ewolff.com
+    scraped_at: 2026-01-30T18:01:14.334Z
+    error: null
+    name: Eberhard Wolff
+  - handle: lifeyx
+    followers: "590"
+    description: |-
+      Engineering Fellow@Next Insurance, Java Champion, http://Java.IL Leader
+      -- With single power comes single responsibility
+    scraped_at: 2026-01-30T18:01:19.864Z
+    error: null
+    name: Haim Yadid
+  - handle: yusuke
+    followers: 13.4K
+    description: Java
+      チャンピオン。OSSプログラマ。サムライズムという会社で海外の素敵ツールを日本国内展開する事業を手がけています。アーチェリー、スプラトゥーン好きの左利き。
+    scraped_at: 2026-01-30T18:01:25.438Z
+    error: null
+    name: Yusuke Yamamoto
+  - handle: yanaga
+    followers: 12.6K
+    description: Empowering developers worldwide as Staff Developer Relations
+      Engineer, Wallet Lead, @Google. Java Champion and former 7x Microsoft MVP.
+      Opinions are my own.
+    scraped_at: 2026-01-30T18:01:31.014Z
+    error: null
+    name: Edson Yanaga
+  - handle: yenerm
+    followers: 4,956
+    description: "Software Engineer @Instacart, ex-Developer Advocate @Google,
+      Doodle dad (ig: sheriffofmonterey), Code geek, Java Champion, ex-GDE,
+      tweets are my own.."
+    scraped_at: 2026-01-30T18:01:36.570Z
+    error: null
+    name: Murat Yener
+  - handle: juntao
+    followers: 2,837
+    description: "Vibe coder. Open-source AI & Rust. Maker of the vibe keyboard:
+      https://vibekeys.dev"
+    scraped_at: 2026-01-30T18:01:42.128Z
+    error: null
+    name: Dr. Michael Juntao Yuan
+  - handle: chochosmx
+    followers: null
+    description: vámonos alv @chochosmx.bsky.social
+    scraped_at: 2026-01-30T18:01:47.693Z
+    error: null
+    name: Enrique Zamudio
