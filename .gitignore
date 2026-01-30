@@ -1,5 +1,5 @@
 node_modules/
-.browser-data/
+scrapers/twitter/.browser-data/
 debug-*.html
 nitter-debug.html
 *.log

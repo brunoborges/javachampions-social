@@ -2,20 +2,29 @@
   "name": "jchamp-github-program",
   "version": "1.0.0",
   "description": "Java Champions Social Media Analysis",
-  "main": "scrape-twitter-login.js",
+  "main": "scrapers/twitter/scrape-login.js",
   "scripts": {
-    "scrape": "node scrape-twitter-login.js",
-    "test-scrape": "node test-twitter.js"
+    "scrape": "node scrapers/twitter/scrape-login.js",
+    "scrape:api": "node scrapers/twitter/scrape-api.js",
+    "scrape:github": "node scrapers/github/scrape.js",
+    "scrape:twitter-simple": "node scrapers/twitter/scrape-simple.js",
+    "scrape:podcasts": "node scrapers/podcasts/scrape.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brunoborges/javachampions-social.git"
   },
-  "keywords": ["java", "champions", "twitter", "social-media"],
+  "keywords": [
+    "java",
+    "champions",
+    "twitter",
+    "social-media"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "playwright": "^1.49.0",
+    "twitter-api-v2": "^1.29.0",
     "yaml": "^2.7.0"
   }
 }
